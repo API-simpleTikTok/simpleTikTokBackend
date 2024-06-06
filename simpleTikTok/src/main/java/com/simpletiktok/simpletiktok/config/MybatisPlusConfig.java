@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 
 @Configuration
-@MapperScan("com.simpletiktok.simpletiktok.mapper")
+@MapperScan("com.simpletiktok.simpletiktok.data.mapper")
 public class MybatisPlusConfig
 {
     @Bean

@@ -1,15 +1,23 @@
 package com.simpletiktok.simpletiktok.data.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author ricetea
  * @since 2024-06-06
  */
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -1,16 +1,24 @@
 package com.simpletiktok.simpletiktok.data.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author ricetea
  * @since 2024-06-06
  */
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Video implements Serializable {
 
     private static final long serialVersionUID = 1L;
