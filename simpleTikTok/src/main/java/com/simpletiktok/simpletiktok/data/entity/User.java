@@ -22,39 +22,56 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer id;
+    /**
+     * 抖音号
+     */
+    private String author;
 
-    private String username;
+    private String nickname;
 
     private String password;
 
     private String avator;
 
-    private String sex;
+    private Integer gender;
 
-    private Integer age;
+    private Integer userAge;
 
-    private Integer follow;
+    /**
+     * 粉丝数
+     */
+    private Integer followerCount;
 
-    private Integer beliked;
+    /**
+     * 获赞数
+     */
+    private Integer awemeCount;
 
     private Integer folllower;
 
-    private String introduce;
+    /**
+     * 个性签名
+     */
+    private String signature;
 
-    public Integer getId() {
-        return id;
+    /**
+     * 朋友数
+     */
+    private Integer followingCount;
+
+    public String getAuthor() {
+        return author;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setAuthor(String author) {
+        this.author = author;
     }
-    public String getUsername() {
-        return username;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
     public String getPassword() {
         return password;
@@ -70,33 +87,33 @@ public class User implements Serializable {
     public void setAvator(String avator) {
         this.avator = avator;
     }
-    public String getSex() {
-        return sex;
+    public Integer getGender() {
+        return gender;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setGender(Integer gender) {
+        this.gender = gender;
     }
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-    public Integer getFollow() {
-        return follow;
+    public Integer getUserAge() {
+        return userAge;
     }
 
-    public void setFollow(Integer follow) {
-        this.follow = follow;
+    public void setUserAge(Integer userAge) {
+        this.userAge = userAge;
     }
-    public Integer getBeliked() {
-        return beliked;
+    public Integer getFollowerCount() {
+        return followerCount;
     }
 
-    public void setBeliked(Integer beliked) {
-        this.beliked = beliked;
+    public void setFollowerCount(Integer followerCount) {
+        this.followerCount = followerCount;
+    }
+    public Integer getAwemeCount() {
+        return awemeCount;
+    }
+
+    public void setAwemeCount(Integer awemeCount) {
+        this.awemeCount = awemeCount;
     }
     public Integer getFolllower() {
         return folllower;
@@ -105,27 +122,35 @@ public class User implements Serializable {
     public void setFolllower(Integer folllower) {
         this.folllower = folllower;
     }
-    public String getIntroduce() {
-        return introduce;
+    public String getSignature() {
+        return signature;
     }
 
-    public void setIntroduce(String introduce) {
-        this.introduce = introduce;
+    public void setSignature(String signature) {
+        this.signature = signature;
+    }
+    public Integer getFollowingCount() {
+        return followingCount;
+    }
+
+    public void setFollowingCount(Integer followingCount) {
+        this.followingCount = followingCount;
     }
 
     @Override
     public String toString() {
         return "User{" +
-            "id=" + id +
-            ", username=" + username +
-            ", password=" + password +
-            ", avator=" + avator +
-            ", sex=" + sex +
-            ", age=" + age +
-            ", follow=" + follow +
-            ", beliked=" + beliked +
-            ", folllower=" + folllower +
-            ", introduce=" + introduce +
-        "}";
+                "author=" + author +
+                ", nickname=" + nickname +
+                ", password=" + password +
+                ", avator=" + avator +
+                ", gender=" + gender +
+                ", userAge=" + userAge +
+                ", followerCount=" + followerCount +
+                ", awemeCount=" + awemeCount +
+                ", folllower=" + folllower +
+                ", signature=" + signature +
+                ", followingCount=" + followingCount +
+                "}";
     }
 }

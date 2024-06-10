@@ -27,15 +27,15 @@ public class Video implements Serializable {
 
     private String title;
 
-    private Integer authorId;
+    private String authorId;
 
-    private Integer like;
+    private Integer diggCount;
 
-    private Integer comment;
+    private Integer commentCount;
 
-    private Integer collect;
+    private Integer collectCount;
 
-    private Integer share;
+    private Integer shareCount;
 
     private String desc;
 
@@ -59,40 +59,40 @@ public class Video implements Serializable {
     public void setTitle(String title) {
         this.title = title;
     }
-    public Integer getAuthorId() {
+    public String getAuthorId() {
         return authorId;
     }
 
-    public void setAuthorId(Integer authorId) {
+    public void setAuthorId(String authorId) {
         this.authorId = authorId;
     }
-    public Integer getLike() {
-        return like;
+    public Integer getDiggCount() {
+        return diggCount;
     }
 
-    public void setLike(Integer like) {
-        this.like = like;
+    public void setDiggCount(Integer diggCount) {
+        this.diggCount = diggCount;
     }
-    public Integer getComment() {
-        return comment;
-    }
-
-    public void setComment(Integer comment) {
-        this.comment = comment;
-    }
-    public Integer getCollect() {
-        return collect;
+    public Integer getCommentCount() {
+        return commentCount;
     }
 
-    public void setCollect(Integer collect) {
-        this.collect = collect;
+    public void setCommentCount(Integer commentCount) {
+        this.commentCount = commentCount;
     }
-    public Integer getShare() {
-        return share;
+    public Integer getCollectCount() {
+        return collectCount;
     }
 
-    public void setShare(Integer share) {
-        this.share = share;
+    public void setCollectCount(Integer collectCount) {
+        this.collectCount = collectCount;
+    }
+    public Integer getShareCount() {
+        return shareCount;
+    }
+
+    public void setShareCount(Integer shareCount) {
+        this.shareCount = shareCount;
     }
     public String getDesc() {
         return desc;
@@ -126,17 +126,17 @@ public class Video implements Serializable {
     @Override
     public String toString() {
         return "Video{" +
-            "id=" + id +
-            ", title=" + title +
-            ", authorId=" + authorId +
-            ", like=" + like +
-            ", comment=" + comment +
-            ", collect=" + collect +
-            ", share=" + share +
-            ", desc=" + desc +
-            ", uploadTime=" + uploadTime +
-            ", cover=" + cover +
-            ", url=" + url +
-        "}";
+                "id=" + id +
+                ", title=" + title +
+                ", authorId=" + authorId +
+                ", diggCount=" + diggCount +
+                ", commentCount=" + commentCount +
+                ", collectCount=" + collectCount +
+                ", shareCount=" + shareCount +
+                ", desc=" + desc +
+                ", uploadTime=" + uploadTime +
+                ", cover=" + cover +
+                ", url=" + url +
+                "}";
     }
 }
