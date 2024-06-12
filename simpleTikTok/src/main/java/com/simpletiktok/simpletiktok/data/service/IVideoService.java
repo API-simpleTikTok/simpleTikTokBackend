@@ -15,5 +15,5 @@ import java.util.List;
  */
 public interface IVideoService extends IService<Video> {
 
-    List<Video> getMyVideo(String pageNo, String pageSize, String author);
+    List<Video> getMyVideo(Integer pageNo, Integer pageSize, String author);
 }

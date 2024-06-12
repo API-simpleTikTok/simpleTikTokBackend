@@ -30,7 +30,7 @@ public class VideoController {
     private IVideoService videoService;
 
     @GetMapping("/my")
-    public ResponseResult<Map<String, Object>> getMyVideo(@RequestParam String pageNo, @RequestParam String pageSize, @RequestParam String author) {
+    public ResponseResult<Map<String, Object>> getMyVideo(@RequestParam Integer pageNo, @RequestParam Integer pageSize, @RequestParam String author) {
         List<Video> videoList = videoService.getMyVideo(pageNo, pageSize, author);
         LambdaQueryWrapper<Video> countQueryWrapper = new LambdaQueryWrapper<>();
         countQueryWrapper.eq(Video::getAuthor, author);

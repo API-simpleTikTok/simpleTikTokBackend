@@ -21,10 +21,10 @@ import java.util.List;
 public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements IVideoService {
 
     @Override
-    public List<Video> getMyVideo(String pageNo, String pageSize, String author) {
+    public List<Video> getMyVideo(Integer pageNo, Integer pageSize, String author) {
         LambdaQueryWrapper<Video> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(Video::getAuthor, author);
-        queryWrapper.last("limit " + (Integer.parseInt(pageNo) - 1) * Integer.parseInt(pageSize) + "," + pageSize);
+        queryWrapper.last("limit " + (pageNo - 1) * pageSize + "," + pageSize);
         return list(queryWrapper);
     }
 }

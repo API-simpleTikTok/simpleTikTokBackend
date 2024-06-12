@@ -1,5 +1,6 @@
 package com.simpletiktok.simpletiktok.data.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -37,6 +38,7 @@ public class Video implements Serializable {
 
     private Integer shareCount;
 
+    @TableField("`desc`")
     private String desc;
 
     private LocalDateTime uploadTime;
