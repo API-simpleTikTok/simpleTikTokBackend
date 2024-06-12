@@ -27,7 +27,7 @@ public class Video implements Serializable {
 
     private String title;
 
-    private String authorId;
+    private String author;
 
     private Integer diggCount;
 
@@ -59,12 +59,12 @@ public class Video implements Serializable {
     public void setTitle(String title) {
         this.title = title;
     }
-    public String getAuthorId() {
-        return authorId;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setAuthorId(String authorId) {
-        this.authorId = authorId;
+    public void setAuthor(String author) {
+        this.author = author;
     }
     public Integer getDiggCount() {
         return diggCount;
@@ -128,7 +128,7 @@ public class Video implements Serializable {
         return "Video{" +
                 "id=" + id +
                 ", title=" + title +
-                ", authorId=" + authorId +
+                ", author=" + author +
                 ", diggCount=" + diggCount +
                 ", commentCount=" + commentCount +
                 ", collectCount=" + collectCount +

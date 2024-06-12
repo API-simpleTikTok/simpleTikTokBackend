@@ -3,6 +3,8 @@ package com.simpletiktok.simpletiktok.data.service;
 import com.simpletiktok.simpletiktok.data.entity.Video;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IVideoService extends IService<Video> {
 
+    List<Video> getMyVideo(String pageNo, String pageSize, String author);
 }
