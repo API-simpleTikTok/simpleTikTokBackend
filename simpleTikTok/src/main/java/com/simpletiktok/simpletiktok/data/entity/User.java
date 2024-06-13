@@ -33,7 +33,7 @@ public class User implements Serializable {
 
     private String password;
 
-    private String avator;
+    private String avatar;
 
     private Integer gender;
 
@@ -87,12 +87,12 @@ public class User implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-    public String getAvator() {
-        return avator;
+    public String getAvatar() {
+        return avatar;
     }
 
-    public void setAvator(String avator) {
-        this.avator = avator;
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
     public Integer getGender() {
         return gender;
@@ -157,7 +157,7 @@ public class User implements Serializable {
                 "author=" + author +
                 ", nickname=" + nickname +
                 ", password=" + password +
-                ", avator=" + avator +
+                ", avatar=" + avatar +
                 ", gender=" + gender +
                 ", userAge=" + userAge +
                 ", followerCount=" + followerCount +

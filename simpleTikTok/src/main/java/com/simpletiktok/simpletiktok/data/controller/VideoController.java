@@ -32,7 +32,7 @@ public class VideoController {
     @Resource
     private UserMapper userMapper;
 
-    private String avator;
+    private String avatar;
 
     @GetMapping("/my")
     public ResponseResult<Map<String, Object>> getMyVideo(@RequestParam Integer pageNo, @RequestParam Integer pageSize, @RequestParam String author) {
@@ -46,7 +46,7 @@ public class VideoController {
         List<Map<String, Object>> newList = new ArrayList<>();
 
         for (Video video : videoList) {
-            avator = userMapper.selectById(video.getAuthor()).getAvator();
+            avatar = userMapper.selectById(video.getAuthor()).getAvatar();
             Map<String, Object> newVideo = new HashMap<>();
             newVideo.put("aweme_id", video.getAwemeId());
             newVideo.put("desc", video.getDesc());
@@ -90,14 +90,14 @@ public class VideoController {
             Map<String, Object> authorDetails = new HashMap<>();
             authorDetails.put("avatar_168x168",
                     new HashMap<String,Object>(){{
-                        put("url_list", Collections.singletonList(avator));
+                        put("url_list", Collections.singletonList(avatar));
                         put("width", 720);
                         put("height", 720);
                     }}
             );
             authorDetails.put("avatar_300x300",
                     new HashMap<String,Object>(){{
-                        put("url_list", Collections.singletonList(avator));
+                        put("url_list", Collections.singletonList(avatar));
                         put("width", 720);
                         put("height", 720);
                     }}
@@ -125,9 +125,9 @@ public class VideoController {
         Map<String, Object> videoPage = new HashMap<>();
         videoPage.put("total", totalVideos);
         List<Map<String,Object>> newList =new ArrayList<>();
-        String avator;
+        String avatar;
         for(Video video : videoList) {
-            avator = userMapper.selectById(video.getAuthor()).getAvator();
+            avatar = userMapper.selectById(video.getAuthor()).getAvatar();
             Map<String,Object> newVideo = new HashMap<>();
             newVideo.put("desc",video.getDesc());
 
@@ -149,8 +149,8 @@ public class VideoController {
             newVideo.put("statistics", statistics);
 
             Map<String, Object> author = new HashMap<>();
-            author.put("avatar_168x168", Collections.singletonMap("url_list", Collections.singletonList(avator)));
-            author.put("avatar_300x300", Collections.singletonMap("url_list", Collections.singletonList(avator)));
+            author.put("avatar_168x168", Collections.singletonMap("url_list", Collections.singletonList(avatar)));
+            author.put("avatar_300x300", Collections.singletonMap("url_list", Collections.singletonList(avatar)));
             author.put("cover_url", Arrays.asList(
                     new HashMap<String, Object>() {{
                         put("uri", "douyin-user-image-file/f2196ddaa37f3097932d8a29ff0d0ca5");
