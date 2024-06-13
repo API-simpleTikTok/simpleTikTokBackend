@@ -1,7 +1,6 @@
 package com.simpletiktok.simpletiktok.data.controller;
 
 import com.simpletiktok.simpletiktok.data.entity.Love;
-import com.simpletiktok.simpletiktok.data.entity.Video;
 import com.simpletiktok.simpletiktok.data.service.ILoveService;
 import com.simpletiktok.simpletiktok.data.service.IVideoService;
 import com.simpletiktok.simpletiktok.vo.ResponseResult;

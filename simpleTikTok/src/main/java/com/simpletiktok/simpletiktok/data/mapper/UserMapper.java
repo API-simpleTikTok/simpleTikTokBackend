@@ -3,7 +3,6 @@ package com.simpletiktok.simpletiktok.data.mapper;
 import com.simpletiktok.simpletiktok.data.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
 
 /**
  * <p>
@@ -16,6 +15,4 @@ import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
-    @Select("SELECT avator FROM user WHERE author =#{author}")
-    String getAvatorByAuthor(String author);
 }

@@ -3,7 +3,6 @@ package com.simpletiktok.simpletiktok.data.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.simpletiktok.simpletiktok.data.entity.Video;
 import com.simpletiktok.simpletiktok.data.mapper.UserMapper;
-import com.simpletiktok.simpletiktok.data.service.IUserService;
 import com.simpletiktok.simpletiktok.data.service.IVideoService;
 import com.simpletiktok.simpletiktok.vo.ResponseResult;
 import jakarta.annotation.Resource;
@@ -29,11 +28,11 @@ import java.util.*;
 public class VideoController {
     @Autowired
     private IVideoService videoService;
-    @Autowired
-    private IUserService userService;
 
     @Resource
     private UserMapper userMapper;
+
+    private String avator;
 
     @GetMapping("/my")
     public ResponseResult<Map<String, Object>> getMyVideo(@RequestParam Integer pageNo, @RequestParam Integer pageSize, @RequestParam String author) {
@@ -44,10 +43,10 @@ public class VideoController {
         Map<String, Object> videoPage = new HashMap<>();
         videoPage.put("pageNo", pageNo);
         videoPage.put("total", totalVideos);
-        String avator;
         List<Map<String, Object>> newList = new ArrayList<>();
 
         for (Video video : videoList) {
+            avator = userMapper.selectById(video.getAuthor()).getAvator();
             Map<String, Object> newVideo = new HashMap<>();
             newVideo.put("aweme_id", video.getAwemeId());
             newVideo.put("desc", video.getDesc());
@@ -91,20 +90,20 @@ public class VideoController {
             Map<String, Object> authorDetails = new HashMap<>();
             authorDetails.put("avatar_168x168",
                     new HashMap<String,Object>(){{
-                        put("url_list", Collections.singletonList(userMapper.selectById(video.getAuthor()).getAvator()));
+                        put("url_list", Collections.singletonList(avator));
                         put("width", 720);
                         put("height", 720);
                     }}
             );
             authorDetails.put("avatar_300x300",
                     new HashMap<String,Object>(){{
-                        put("url_list", Collections.singletonList(userMapper.selectById(video.getAuthor()).getAvator()));
+                        put("url_list", Collections.singletonList(avator));
                         put("width", 720);
                         put("height", 720);
                     }}
             );
 
-            authorDetails.put("cover_url", Arrays.asList(
+            authorDetails.put("cover_url", List.of(
                     new HashMap<String, Object>() {{
                         put("url_list", Collections.singletonList("http://sen0fbsqd.hb-bkt.clouddn.com/aTnyHICCi-NMudWfVELeO.png"));
                     }}
@@ -128,7 +127,7 @@ public class VideoController {
         List<Map<String,Object>> newList =new ArrayList<>();
         String avator;
         for(Video video : videoList) {
-            avator = userService.getAvatorByAuthor(video.getAuthor());
+            avator = userMapper.selectById(video.getAuthor()).getAvator();
             Map<String,Object> newVideo = new HashMap<>();
             newVideo.put("desc",video.getDesc());
 
