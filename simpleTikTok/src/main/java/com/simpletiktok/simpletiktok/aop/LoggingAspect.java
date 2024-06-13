@@ -1,6 +1,7 @@
 package com.simpletiktok.simpletiktok.aop;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -42,6 +43,7 @@ public class LoggingAspect
 
         // 记录入参
         ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new JavaTimeModule());
         String args = objectMapper.writeValueAsString(joinPoint.getArgs());
         LoggerFactory.getLogger(joinPoint.getTarget().getClass()).info("[{}] Request: {}", logId, args);
 

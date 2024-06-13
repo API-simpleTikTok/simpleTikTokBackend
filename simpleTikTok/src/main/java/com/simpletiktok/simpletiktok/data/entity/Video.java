@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-
+import java.time.ZoneOffset;
+import java.time.ZoneOffset;
 /**
  * <p>
  *
@@ -54,6 +55,7 @@ public class Video implements Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
+
     public String getTitle() {
         return title;
     }
@@ -103,8 +105,8 @@ public class Video implements Serializable {
     public void setDesc(String desc) {
         this.desc = desc;
     }
-    public LocalDateTime getUploadTime() {
-        return uploadTime;
+    public long getUploadTime() {
+        return uploadTime.toEpochSecond(ZoneOffset.UTC);
     }
 
     public void setUploadTime(LocalDateTime uploadTime) {

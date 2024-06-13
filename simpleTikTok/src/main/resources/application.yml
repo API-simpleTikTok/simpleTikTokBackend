@@ -11,6 +11,10 @@ spring:
       port: 6379
       host: 39.106.39.209
 
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
 management:
   endpoints:
     web:
