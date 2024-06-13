@@ -1,6 +1,7 @@
 package com.simpletiktok.simpletiktok.data.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,7 +26,11 @@ public class Video implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer id;
+    /**
+     * 视频ID
+     */
+    @TableId("aweme_id")
+    private String awemeId;
 
     private String title;
 
@@ -42,20 +47,21 @@ public class Video implements Serializable {
     @TableField("`desc`")
     private String desc;
 
-    private LocalDateTime uploadTime;
+    private LocalDateTime createTime;
 
     private String cover;
 
     private String url;
 
-    public Integer getId() {
-        return id;
+    private Integer isTop;
+
+    public String getAwemeId() {
+        return awemeId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setAwemeId(String awemeId) {
+        this.awemeId = awemeId;
     }
-
     public String getTitle() {
         return title;
     }
@@ -105,12 +111,12 @@ public class Video implements Serializable {
     public void setDesc(String desc) {
         this.desc = desc;
     }
-    public long getUploadTime() {
-        return uploadTime.toEpochSecond(ZoneOffset.UTC);
+    public long getCreateTime() {
+        return createTime.toEpochSecond(ZoneOffset.UTC);
     }
 
-    public void setUploadTime(LocalDateTime uploadTime) {
-        this.uploadTime = uploadTime;
+    public void setCreateTime(LocalDateTime createTime) {
+        this.createTime = createTime;
     }
     public String getCover() {
         return cover;
@@ -126,11 +132,18 @@ public class Video implements Serializable {
     public void setUrl(String url) {
         this.url = url;
     }
+    public Integer getIsTop() {
+        return isTop;
+    }
+
+    public void setIsTop(Integer isTop) {
+        this.isTop = isTop;
+    }
 
     @Override
     public String toString() {
         return "Video{" +
-                "id=" + id +
+                "awemeId=" + awemeId +
                 ", title=" + title +
                 ", author=" + author +
                 ", diggCount=" + diggCount +
@@ -138,9 +151,10 @@ public class Video implements Serializable {
                 ", collectCount=" + collectCount +
                 ", shareCount=" + shareCount +
                 ", desc=" + desc +
-                ", uploadTime=" + uploadTime +
+                ", createTime=" + createTime +
                 ", cover=" + cover +
                 ", url=" + url +
+                ", isTop=" + isTop +
                 "}";
     }
 }

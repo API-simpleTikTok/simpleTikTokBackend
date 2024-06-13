@@ -27,4 +27,16 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements
         queryWrapper.last("limit " + (pageNo - 1) * pageSize + "," + pageSize);
         return list(queryWrapper);
     }
+
+    @Override
+    public List<Video> getRecommendedVideo(Integer start, Integer pageSize) {
+        Integer pageNo = 0;
+        if(start != 0)
+            pageNo = start / pageSize;
+        else
+            pageNo = 1;
+        LambdaQueryWrapper<Video> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.last("limit " + (pageNo - 1) * pageSize + "," + pageSize);
+        return list(queryWrapper);
+    }
 }

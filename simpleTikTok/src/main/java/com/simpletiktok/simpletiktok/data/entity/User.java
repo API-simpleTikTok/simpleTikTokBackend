@@ -1,5 +1,6 @@
 package com.simpletiktok.simpletiktok.data.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,6 +26,7 @@ public class User implements Serializable {
     /**
      * 抖音号
      */
+    @TableId("author")
     private String author;
 
     private String nickname;
@@ -47,7 +49,7 @@ public class User implements Serializable {
      */
     private Integer awemeCount;
 
-    private Integer folllower;
+    private Integer follower;
 
     /**
      * 个性签名
@@ -58,6 +60,11 @@ public class User implements Serializable {
      * 朋友数
      */
     private Integer followingCount;
+
+    /**
+     * 背景图片
+     */
+    private String coverUrl;
 
     public String getAuthor() {
         return author;
@@ -115,12 +122,12 @@ public class User implements Serializable {
     public void setAwemeCount(Integer awemeCount) {
         this.awemeCount = awemeCount;
     }
-    public Integer getFolllower() {
-        return folllower;
+    public Integer getFollower() {
+        return follower;
     }
 
-    public void setFolllower(Integer folllower) {
-        this.folllower = folllower;
+    public void setFollower(Integer follower) {
+        this.follower = follower;
     }
     public String getSignature() {
         return signature;
@@ -136,6 +143,13 @@ public class User implements Serializable {
     public void setFollowingCount(Integer followingCount) {
         this.followingCount = followingCount;
     }
+    public String getCoverUrl() {
+        return coverUrl;
+    }
+
+    public void setCoverUrl(String coverUrl) {
+        this.coverUrl = coverUrl;
+    }
 
     @Override
     public String toString() {
@@ -148,9 +162,10 @@ public class User implements Serializable {
                 ", userAge=" + userAge +
                 ", followerCount=" + followerCount +
                 ", awemeCount=" + awemeCount +
-                ", folllower=" + folllower +
+                ", follower=" + follower +
                 ", signature=" + signature +
                 ", followingCount=" + followingCount +
+                ", coverUrl=" + coverUrl +
                 "}";
     }
 }

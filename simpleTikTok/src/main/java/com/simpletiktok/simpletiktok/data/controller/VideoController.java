@@ -2,17 +2,18 @@ package com.simpletiktok.simpletiktok.data.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.simpletiktok.simpletiktok.data.entity.Video;
+import com.simpletiktok.simpletiktok.data.mapper.UserMapper;
+import com.simpletiktok.simpletiktok.data.service.IUserService;
 import com.simpletiktok.simpletiktok.data.service.IVideoService;
 import com.simpletiktok.simpletiktok.vo.ResponseResult;
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 /**
@@ -28,6 +29,11 @@ import java.util.Map;
 public class VideoController {
     @Autowired
     private IVideoService videoService;
+    @Autowired
+    private IUserService userService;
+
+    @Resource
+    private UserMapper userMapper;
 
     @GetMapping("/my")
     public ResponseResult<Map<String, Object>> getMyVideo(@RequestParam Integer pageNo, @RequestParam Integer pageSize, @RequestParam String author) {
@@ -38,7 +44,129 @@ public class VideoController {
         Map<String, Object> videoPage = new HashMap<>();
         videoPage.put("pageNo", pageNo);
         videoPage.put("total", totalVideos);
-        videoPage.put("list", videoList);
+        String avator;
+        List<Map<String, Object>> newList = new ArrayList<>();
+
+        for (Video video : videoList) {
+            Map<String, Object> newVideo = new HashMap<>();
+            newVideo.put("aweme_id", video.getAwemeId());
+            newVideo.put("desc", video.getDesc());
+            newVideo.put("create_time", video.getCreateTime());
+
+            Map<String, Object> videoDetails = new HashMap<>();
+            videoDetails.put("play_addr",
+                    new HashMap<String, Object>() {{
+                        put("url_list", Collections.singletonList("AiIEMkIA7Cb3s5c4e7e6g.png"));
+                        put("height", 1920);
+                        put("width", 1080);
+                    }}
+            );
+            videoDetails.put("cover",
+                    new HashMap<String, Object>() {{
+                        put("url_list", Collections.singletonList("AiIEMkIA7Cb3s5c4e7e6g.png"));
+                        put("height", 720);
+                        put("width", 720);
+                    }}
+            );
+            newVideo.put("video", videoDetails);
+
+            Map<String, Object> statistics = new HashMap<>();
+            statistics.put("admire_count", 0);
+            statistics.put("comment_count", video.getCommentCount());
+            statistics.put("digg_count", video.getDiggCount());
+            statistics.put("collect_count", video.getCollectCount());
+            statistics.put("play_count", 0);
+            statistics.put("share_count", video.getShareCount());
+            newVideo.put("statistics", statistics);
+
+            newVideo.put("is_top", video.getIsTop());
+            newVideo.put("author_user_id", video.getAuthor());
+
+            Map<String, Object> author_list = new HashMap<>();
+            author_list.put("aweme_count",userMapper.selectById(video.getAuthor()).getAwemeCount());
+            author_list.put("follower_count",userMapper.selectById(video.getAuthor()).getFollowerCount());
+            author_list.put("following_count",userMapper.selectById(video.getAuthor()).getFollowingCount());
+            author_list.put("nickname",userMapper.selectById(video.getAuthor()).getNickname());
+            author_list.put("author",userMapper.selectById(video.getAuthor()).getAuthor());
+            Map<String, Object> authorDetails = new HashMap<>();
+            authorDetails.put("avatar_168x168",
+                    new HashMap<String,Object>(){{
+                        put("url_list", Collections.singletonList(userMapper.selectById(video.getAuthor()).getAvator()));
+                        put("width", 720);
+                        put("height", 720);
+                    }}
+            );
+            authorDetails.put("avatar_300x300",
+                    new HashMap<String,Object>(){{
+                        put("url_list", Collections.singletonList(userMapper.selectById(video.getAuthor()).getAvator()));
+                        put("width", 720);
+                        put("height", 720);
+                    }}
+            );
+
+            authorDetails.put("cover_url", Arrays.asList(
+                    new HashMap<String, Object>() {{
+                        put("url_list", Collections.singletonList("http://sen0fbsqd.hb-bkt.clouddn.com/aTnyHICCi-NMudWfVELeO.png"));
+                    }}
+            ));
+            author_list.put("author", authorDetails);
+            newVideo.put("author", author_list);
+            newList.add(newVideo);
+        }
+
+        videoPage.put("list", newList);
+        return ResponseResult.success(videoPage);
+    }
+
+    @GetMapping("/recommended")
+    public ResponseResult<Map<String, Object>> getRecommendedVideo(@RequestParam Integer start, @RequestParam Integer pageSize) {
+        List<Video> videoList = videoService.getRecommendedVideo(start, pageSize);
+        LambdaQueryWrapper<Video> countQueryWrapper = new LambdaQueryWrapper<>();
+        int totalVideos = (int) videoService.count(countQueryWrapper);
+        Map<String, Object> videoPage = new HashMap<>();
+        videoPage.put("total", totalVideos);
+        List<Map<String,Object>> newList =new ArrayList<>();
+        String avator;
+        for(Video video : videoList) {
+            avator = userService.getAvatorByAuthor(video.getAuthor());
+            Map<String,Object> newVideo = new HashMap<>();
+            newVideo.put("desc",video.getDesc());
+
+            Map<String, Object> videoDetails = new HashMap<>();
+            videoDetails.put("play_addr", Collections.singletonMap("url_list", Collections.singletonList(video.getUrl())));
+            videoDetails.put("poster", "a1.jpg");
+            videoDetails.put("ratio", "1080p");
+            videoDetails.put("use_static_cover", true);
+            videoDetails.put("duration", 13560);
+            newVideo.put("video", videoDetails);
+
+            Map<String, Object> statistics = new HashMap<>();
+            statistics.put("admire_count", 0);
+            statistics.put("comment_count", video.getCommentCount());
+            statistics.put("digg_count", video.getDiggCount());
+            statistics.put("collect_count", video.getCollectCount());
+            statistics.put("play_count", 0);
+            statistics.put("share_count", video.getShareCount());
+            newVideo.put("statistics", statistics);
+
+            Map<String, Object> author = new HashMap<>();
+            author.put("avatar_168x168", Collections.singletonMap("url_list", Collections.singletonList(avator)));
+            author.put("avatar_300x300", Collections.singletonMap("url_list", Collections.singletonList(avator)));
+            author.put("cover_url", Arrays.asList(
+                    new HashMap<String, Object>() {{
+                        put("uri", "douyin-user-image-file/f2196ddaa37f3097932d8a29ff0d0ca5");
+                        put("url_list", Collections.singletonList("AiIEMkIA7Cb3s5c4e7e6g.png"));
+                    }},
+                    new HashMap<String, Object>() {{
+                        put("uri", "c8510002be9a3a61aad2");
+                        put("url_list", Collections.singletonList("aHzLr77vcdBMUil15rXBa.png"));
+                    }}
+            ));
+            newVideo.put("author", author);
+
+            newList.add(newVideo);
+        }
+        videoPage.put("list", newList);
         return ResponseResult.success(videoPage);
     }
 }
