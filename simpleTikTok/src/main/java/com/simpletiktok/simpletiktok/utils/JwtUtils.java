@@ -1,12 +1,17 @@
 package com.simpletiktok.simpletiktok.utils;
 
-
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
+import com.auth0.jwt.interfaces.DecodedJWT;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.simpletiktok.simpletiktok.data.entity.User;
+import com.simpletiktok.simpletiktok.data.mapper.UserMapper;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.CollectionUtils;
 
 import java.util.Collections;
@@ -16,8 +21,9 @@ import java.util.List;
 /**
  * JWT工具类
  */
-public class JwtUtils
-{
+public class JwtUtils {
+
+    private static final String VERSION_CLAIM = "version";
 
     /**
      * 默认JWT标签头
@@ -34,24 +40,22 @@ public class JwtUtils
     /**
      * 初始化参数
      *
-     * @param header     JWT标签头
-     * @param tokenHead    Token头
-     * @param issuer     签发者
-     * @param secretKey    密钥 最小长度：4
+     * @param header         JWT标签头
+     * @param tokenHead      Token头
+     * @param issuer         签发者
+     * @param secretKey      密钥 最小长度：4
      * @param expirationTime Token过期时间 单位：秒
-     * @param issuers     签发者列表 校验签发者时使用
-     * @param audience    接受者
+     * @param issuers        签发者列表 校验签发者时使用
+     * @param audience       接受者
      */
-    public static void initialize(String header, String tokenHead, String issuer, String secretKey, long expirationTime, List<String> issuers, String audience)
-    {
+    public static void initialize(String header, String tokenHead, String issuer, String secretKey, long expirationTime, List<String> issuers, String audience) {
         jwtConfig = new JwtConfig();
         jwtConfig.setHeader(StringUtils.isNotBlank(header) ? header : HEADER);
         jwtConfig.setTokenHead(tokenHead);
         jwtConfig.setIssuer(issuer);
         jwtConfig.setSecretKey(secretKey);
         jwtConfig.setExpirationTime(expirationTime);
-        if (CollectionUtils.isEmpty(issuers))
-        {
+        if (CollectionUtils.isEmpty(issuers)) {
             issuers = Collections.singletonList(issuer);
         }
         jwtConfig.setIssuers(issuers);
@@ -62,8 +66,7 @@ public class JwtUtils
     /**
      * 初始化参数
      */
-    public static void initialize(String header, String issuer, String secretKey, long expirationTime)
-    {
+    public static void initialize(String header, String issuer, String secretKey, long expirationTime) {
         initialize(header, null, issuer, secretKey, expirationTime, null, null);
     }
 
@@ -81,23 +84,23 @@ public class JwtUtils
      * @param subject 主题
      * @return Token
      */
-    public static String generateToken(String subject)
-    {
-        return generateToken(subject, jwtConfig.getExpirationTime());
+    public static String generateToken(String subject, Integer versionId) {
+        return generateToken(subject, versionId, jwtConfig.getExpirationTime());
     }
 
     /**
      * 生成 Token
      *
-     * @param subject     主题
+     * @param subject        主题
      * @param expirationTime 过期时间
      * @return Token
      */
-    public static String generateToken(String subject, long expirationTime) {
+    public static String generateToken(String subject, Integer versionId, long expirationTime) {
         Date now = new Date();
         Date expiration = new Date(now.getTime() + expirationTime * 1000);
 
         return JWT.create()
+                .withClaim(VERSION_CLAIM, versionId)
                 .withSubject(subject)
                 .withIssuer(jwtConfig.getIssuer())
                 .withAudience(jwtConfig.getAudience())
@@ -124,7 +127,19 @@ public class JwtUtils
      */
     public static boolean isValidToken(String token) {
         try {
+            String subject = getSubject(token);
             token = getTokenContent(token);
+            QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+            queryWrapper.eq("username", subject);
+            UserMapper userMapper = ContextUtils.getApplicationContext().getBean(UserMapper.class);
+            User user = userMapper.selectOne(queryWrapper);
+            DecodedJWT jwt = JWT.decode(token);
+            int version = jwt.getClaim(VERSION_CLAIM).asInt();
+            System.out.println(version);
+            System.out.println(subject);
+
+            if (version != user.getVersion()) return false;
+
             Algorithm algorithm = Algorithm.HMAC256(jwtConfig.getSecretKey());
             JWTVerifier verifier = JWT.require(algorithm).build();
             verifier.verify(token);
@@ -170,17 +185,12 @@ public class JwtUtils
     /**
      * 获取当前Jwt配置信息
      */
-    public static JwtConfig getCurrentConfig()
-    {
-        if (jwtConfig == null) {
-            throw new IllegalStateException("JwtConfig is not initialized");
-        }
+    public static JwtConfig getCurrentConfig() {
         return jwtConfig;
     }
 
     @Data
-    public static class JwtConfig
-    {
+    public static class JwtConfig {
         /**
          * JwtToken Header标签
          */

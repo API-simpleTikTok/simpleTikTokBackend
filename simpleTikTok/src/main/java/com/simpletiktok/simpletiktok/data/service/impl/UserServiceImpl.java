@@ -96,7 +96,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
         User user = new User(username, nickname, encodedPassword,
                 "http://sen0fbsqd.hb-bkt.clouddn.com/1945347711_avatar.jpg", 0, -1, 0, 0, 0,
-                "", 0, "http://sen0fbsqd.hb-bkt.clouddn.com/aTnyHICCi-NMudWfVELeO.png");
+                "", 0, "http://sen0fbsqd.hb-bkt.clouddn.com/aTnyHICCi-NMudWfVELeO.png", 0);
 
         userMapper.insert(user);
 

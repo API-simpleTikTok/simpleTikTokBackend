@@ -5,6 +5,7 @@ import com.simpletiktok.simpletiktok.vo.ResponseResult;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Mono;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,5 +30,11 @@ public class SessionController
         String password = (String) hashMap.get("password");
 
         return ResponseResult.success(sessionService.loginSession(author, password));
+    }
+
+    @DeleteMapping("")
+    public ResponseResult<String> logout( @RequestParam String author)
+    {
+        return ResponseResult.success(sessionService.logoutSession(author));
     }
 }
