@@ -1,7 +1,9 @@
 package com.simpletiktok.simpletiktok.data.controller;
 
 import com.simpletiktok.simpletiktok.data.entity.Love;
+import com.simpletiktok.simpletiktok.data.entity.User;
 import com.simpletiktok.simpletiktok.data.service.ILoveService;
+import com.simpletiktok.simpletiktok.data.service.IUserService;
 import com.simpletiktok.simpletiktok.data.service.IVideoService;
 import com.simpletiktok.simpletiktok.vo.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,18 @@ public class UserController {
     private ILoveService LoveService;
     @Autowired
     private IVideoService VideoService;
+    @Autowired
+    private IUserService UserService;
+
+    @PostMapping("/sign")
+    public ResponseResult<Map<String, String>> sign(@RequestBody Map params)
+    {
+        String author = (String) params.get("author");
+        String password = (String) params.get("password");
+        String confirmedPassword = (String) params.get("confirmedPassword");
+
+        return ResponseResult.success(UserService.register(author, password, confirmedPassword));
+    }
 
     @PostMapping("/diggVideo")
     public ResponseResult<Boolean> diggVideo(@RequestBody Map params) {
