@@ -148,10 +148,10 @@ public class VideoController {
             statistics.put("share_count", video.getShareCount());
             newVideo.put("statistics", statistics);
 
-            Map<String, Object> author = new HashMap<>();
-            author.put("avatar_168x168", Collections.singletonMap("url_list", Collections.singletonList(avatar)));
-            author.put("avatar_300x300", Collections.singletonMap("url_list", Collections.singletonList(avatar)));
-            author.put("cover_url", Arrays.asList(
+            Map<String, Object> authors = new HashMap<>();
+            authors.put("avatar_168x168", Collections.singletonMap("url_list", Collections.singletonList(avatar)));
+            authors.put("avatar_300x300", Collections.singletonMap("url_list", Collections.singletonList(avatar)));
+            authors.put("cover_url", Arrays.asList(
                     new HashMap<String, Object>() {{
                         put("uri", "douyin-user-image-file/f2196ddaa37f3097932d8a29ff0d0ca5");
                         put("url_list", Collections.singletonList("AiIEMkIA7Cb3s5c4e7e6g.png"));
@@ -161,7 +161,7 @@ public class VideoController {
                         put("url_list", Collections.singletonList("aHzLr77vcdBMUil15rXBa.png"));
                     }}
             ));
-            newVideo.put("author", author);
+            newVideo.put("author", authors);
 
             newList.add(newVideo);
         }
