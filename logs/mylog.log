@@ -1097,3 +1097,99 @@ Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'version' in 'field 
 16:19:58.022 [http-nio-3030-exec-2] INFO  c.s.s.d.controller.SessionController - [e53560ed-fd4a-4a10-8a89-b3ab6cc58775] Response: {"code":200,"msg":"操作成功","data":"登出成功！"}
 16:20:08.209 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 16:20:08.346 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+11:22:04.636 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+11:22:04.652 [main] INFO  c.s.s.SimpleTikTokApplication - Starting SimpleTikTokApplication using Java 20.0.1 with PID 2779 (/Users/silva/Desktop/simpleTikTokBackend/simpleTikTok/target/classes started by silva in /Users/silva/Desktop/simpleTikTokBackend)
+11:22:04.652 [main] INFO  c.s.s.SimpleTikTokApplication - No active profile set, falling back to 1 default profile: "default"
+11:22:05.139 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+11:22:05.140 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+11:22:05.156 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+11:22:05.214 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'loveMapper' and 'com.simpletiktok.simpletiktok.data.mapper.LoveMapper' mapperInterface. Bean already defined with the same name!
+11:22:05.214 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.simpletiktok.simpletiktok.data.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+11:22:05.214 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'videoMapper' and 'com.simpletiktok.simpletiktok.data.mapper.VideoMapper' mapperInterface. Bean already defined with the same name!
+11:22:05.214 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.simpletiktok.simpletiktok.data.mapper]' package. Please check your configuration.
+11:22:05.589 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 3030 (http)
+11:22:05.595 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3030"]
+11:22:05.596 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11:22:05.596 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+11:22:05.620 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:22:05.621 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 946 ms
+11:22:05.827 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.simpletiktok.simpletiktok.data.entity.Love".
+11:22:05.829 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.simpletiktok.simpletiktok.data.entity.Love ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+11:22:05.923 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11:22:06.159 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b8fcdf2
+11:22:06.159 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+11:22:06.386 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'VideoService': Error creating bean with name 'videoServiceImpl': Injection of resource dependencies failed
+11:22:06.391 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+11:22:06.464 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+11:22:06.465 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+11:22:06.479 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+11:22:06.488 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   userController (field private com.simpletiktok.simpletiktok.data.service.IVideoService com.simpletiktok.simpletiktok.data.controller.UserController.VideoService)
+┌─────┐
+|  videoServiceImpl
+└─────┘
+
+
+Action:
+
+Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
+11:33:32.241 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+11:33:32.257 [main] INFO  c.s.s.SimpleTikTokApplication - Starting SimpleTikTokApplication using Java 20.0.1 with PID 2936 (/Users/silva/Desktop/simpleTikTokBackend/simpleTikTok/target/classes started by silva in /Users/silva/Desktop/simpleTikTokBackend)
+11:33:32.264 [main] INFO  c.s.s.SimpleTikTokApplication - No active profile set, falling back to 1 default profile: "default"
+11:33:32.737 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+11:33:32.738 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+11:33:32.753 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+11:33:32.807 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'loveMapper' and 'com.simpletiktok.simpletiktok.data.mapper.LoveMapper' mapperInterface. Bean already defined with the same name!
+11:33:32.807 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.simpletiktok.simpletiktok.data.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+11:33:32.807 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'videoMapper' and 'com.simpletiktok.simpletiktok.data.mapper.VideoMapper' mapperInterface. Bean already defined with the same name!
+11:33:32.807 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.simpletiktok.simpletiktok.data.mapper]' package. Please check your configuration.
+11:33:33.170 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 3030 (http)
+11:33:33.177 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3030"]
+11:33:33.178 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11:33:33.178 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+11:33:33.202 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:33:33.203 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 915 ms
+11:33:33.435 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.simpletiktok.simpletiktok.data.entity.Love".
+11:33:33.437 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.simpletiktok.simpletiktok.data.entity.Love ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+11:33:33.534 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11:33:33.745 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@228958a
+11:33:33.746 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+11:33:34.015 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController': Injection of resource dependencies failed
+11:33:34.025 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+11:33:34.049 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+11:33:34.051 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+11:33:34.063 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+11:33:34.070 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   userController
+┌─────┐
+|  videoServiceImpl
+└─────┘
+
+
+Action:
+
+Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
