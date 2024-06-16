@@ -137,6 +137,7 @@ public class VideoController {
             videoDetails.put("ratio", "1080p");
             videoDetails.put("use_static_cover", true);
             videoDetails.put("duration", 13560);
+            videoDetails.put("aweme_id", video.getAwemeId());
             newVideo.put("video", videoDetails);
 
             Map<String, Object> statistics = new HashMap<>();
