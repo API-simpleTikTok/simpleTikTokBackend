@@ -1,0 +1,1099 @@
+14:38:47.575 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+14:38:47.589 [main] INFO  c.s.s.SimpleTikTokApplication - Starting SimpleTikTokApplication using Java 20.0.1 with PID 5547 (/Users/silva/Desktop/simpleTikTokBackend/simpleTikTok/target/classes started by silva in /Users/silva/Desktop/simpleTikTokBackend)
+14:38:47.590 [main] INFO  c.s.s.SimpleTikTokApplication - No active profile set, falling back to 1 default profile: "default"
+14:38:48.204 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+14:38:48.206 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+14:38:48.225 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+14:38:48.269 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'likeMapper' and 'com.simpletiktok.simpletiktok.data.mapper.LikeMapper' mapperInterface. Bean already defined with the same name!
+14:38:48.269 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.simpletiktok.simpletiktok.data.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+14:38:48.269 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'videoMapper' and 'com.simpletiktok.simpletiktok.data.mapper.VideoMapper' mapperInterface. Bean already defined with the same name!
+14:38:48.269 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.simpletiktok.simpletiktok.data.mapper]' package. Please check your configuration.
+14:38:48.685 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 3030 (http)
+14:38:48.692 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3030"]
+14:38:48.693 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+14:38:48.693 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+14:38:48.733 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:38:48.733 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1105 ms
+14:38:49.111 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.simpletiktok.simpletiktok.data.entity.Like".
+14:38:49.113 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.simpletiktok.simpletiktok.data.entity.Like ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+14:38:49.130 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.simpletiktok.simpletiktok.data.entity.User".
+14:38:49.130 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.simpletiktok.simpletiktok.data.entity.User ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+14:38:49.849 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
+14:38:49.892 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-3030"]
+14:38:49.899 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 3030 (http) with context path ''
+14:38:49.910 [main] INFO  c.s.s.SimpleTikTokApplication - Started SimpleTikTokApplication in 2.655 seconds (process running for 3.196)
+14:38:50.368 [RMI TCP Connection(3)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:38:50.368 [RMI TCP Connection(2)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:38:50.368 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+14:38:50.369 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+14:38:50.638 [RMI TCP Connection(3)-127.0.0.1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@f416805
+14:38:50.640 [RMI TCP Connection(3)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:03:08.787 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:03:08.900 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+12:33:10.598 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+12:33:10.612 [main] INFO  c.s.s.SimpleTikTokApplication - Starting SimpleTikTokApplication using Java 20.0.1 with PID 15176 (/Users/silva/Desktop/simpleTikTokBackend/simpleTikTok/target/classes started by silva in /Users/silva/Desktop/simpleTikTokBackend)
+12:33:10.613 [main] INFO  c.s.s.SimpleTikTokApplication - No active profile set, falling back to 1 default profile: "default"
+12:33:11.071 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+12:33:11.072 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+12:33:11.094 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+12:33:11.147 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'loveMapper' and 'com.simpletiktok.simpletiktok.data.mapper.LoveMapper' mapperInterface. Bean already defined with the same name!
+12:33:11.147 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.simpletiktok.simpletiktok.data.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+12:33:11.147 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'videoMapper' and 'com.simpletiktok.simpletiktok.data.mapper.VideoMapper' mapperInterface. Bean already defined with the same name!
+12:33:11.147 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.simpletiktok.simpletiktok.data.mapper]' package. Please check your configuration.
+12:33:11.527 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 3030 (http)
+12:33:11.532 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3030"]
+12:33:11.533 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:33:11.533 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+12:33:11.554 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:33:11.554 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 922 ms
+12:33:11.791 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.simpletiktok.simpletiktok.data.entity.Love".
+12:33:11.793 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.simpletiktok.simpletiktok.data.entity.Love ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+12:33:11.919 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+12:33:12.246 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@64fc6470
+12:33:12.247 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+12:33:12.986 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
+12:33:13.025 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1e487d57, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b2af0eb, org.springframework.security.web.context.SecurityContextHolderFilter@8de8b07, org.springframework.security.web.header.HeaderWriterFilter@507fecf3, org.springframework.web.filter.CorsFilter@66c32e15, com.simpletiktok.simpletiktok.config.filter.MyAuthenticationFilter@362a6aa5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6c6c93f8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1fe37d27, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6d387e9b, org.springframework.security.web.session.SessionManagementFilter@96448ee, org.springframework.security.web.access.ExceptionTranslationFilter@95aeee4, org.springframework.security.web.access.intercept.AuthorizationFilter@16279a5d]
+12:33:13.485 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-3030"]
+12:33:13.493 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 3030 (http) with context path ''
+12:33:13.504 [main] INFO  c.s.s.SimpleTikTokApplication - Started SimpleTikTokApplication in 3.067 seconds (process running for 3.297)
+12:33:13.663 [RMI TCP Connection(1)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+12:33:13.663 [RMI TCP Connection(1)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+12:33:13.664 [RMI TCP Connection(1)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+12:35:03.945 [http-nio-3030-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.NullPointerException: Cannot invoke "com.simpletiktok.simpletiktok.utils.JwtUtils$JwtConfig.getHeader()" because the return value of "com.simpletiktok.simpletiktok.utils.JwtUtils.getCurrentConfig()" is null
+	at com.simpletiktok.simpletiktok.config.filter.MyAuthenticationFilter.doFilterInternal(MyAuthenticationFilter.java:33)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+12:35:18.755 [http-nio-3030-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.NullPointerException: Cannot invoke "com.simpletiktok.simpletiktok.utils.JwtUtils$JwtConfig.getHeader()" because the return value of "com.simpletiktok.simpletiktok.utils.JwtUtils.getCurrentConfig()" is null
+	at com.simpletiktok.simpletiktok.config.filter.MyAuthenticationFilter.doFilterInternal(MyAuthenticationFilter.java:33)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+12:36:26.732 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+12:36:26.848 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+12:36:28.854 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+12:36:28.870 [main] INFO  c.s.s.SimpleTikTokApplication - Starting SimpleTikTokApplication using Java 20.0.1 with PID 15310 (/Users/silva/Desktop/simpleTikTokBackend/simpleTikTok/target/classes started by silva in /Users/silva/Desktop/simpleTikTokBackend)
+12:36:28.871 [main] INFO  c.s.s.SimpleTikTokApplication - No active profile set, falling back to 1 default profile: "default"
+12:36:29.329 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+12:36:29.330 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+12:36:29.345 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+12:36:29.397 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'loveMapper' and 'com.simpletiktok.simpletiktok.data.mapper.LoveMapper' mapperInterface. Bean already defined with the same name!
+12:36:29.397 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.simpletiktok.simpletiktok.data.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+12:36:29.397 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'videoMapper' and 'com.simpletiktok.simpletiktok.data.mapper.VideoMapper' mapperInterface. Bean already defined with the same name!
+12:36:29.397 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.simpletiktok.simpletiktok.data.mapper]' package. Please check your configuration.
+12:36:29.753 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 3030 (http)
+12:36:29.758 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3030"]
+12:36:29.758 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:36:29.758 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+12:36:29.782 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:36:29.782 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 891 ms
+12:36:29.992 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.simpletiktok.simpletiktok.data.entity.Love".
+12:36:29.994 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.simpletiktok.simpletiktok.data.entity.Love ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+12:36:30.110 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+12:36:30.397 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@f96654
+12:36:30.398 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+12:36:30.981 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
+12:36:31.025 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6b64921f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@439d649c, org.springframework.security.web.context.SecurityContextHolderFilter@22349ad3, org.springframework.security.web.header.HeaderWriterFilter@24f77077, org.springframework.web.filter.CorsFilter@6e475994, com.simpletiktok.simpletiktok.config.filter.MyAuthenticationFilter@44976b08, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@589a4305, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35217e0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@55a2f08b, org.springframework.security.web.session.SessionManagementFilter@ebbbe20, org.springframework.security.web.access.ExceptionTranslationFilter@750adad8, org.springframework.security.web.access.intercept.AuthorizationFilter@457d3f54]
+12:36:31.507 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-3030"]
+12:36:31.515 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 3030 (http) with context path ''
+12:36:31.526 [main] INFO  c.s.s.SimpleTikTokApplication - Started SimpleTikTokApplication in 2.822 seconds (process running for 3.147)
+12:36:31.646 [RMI TCP Connection(2)-10.61.213.253] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+12:36:31.646 [RMI TCP Connection(2)-10.61.213.253] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+12:36:31.647 [RMI TCP Connection(2)-10.61.213.253] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+12:36:36.025 [http-nio-3030-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.NullPointerException: Cannot invoke "com.simpletiktok.simpletiktok.utils.JwtUtils$JwtConfig.getHeader()" because the return value of "com.simpletiktok.simpletiktok.utils.JwtUtils.getCurrentConfig()" is null
+	at com.simpletiktok.simpletiktok.config.filter.MyAuthenticationFilter.doFilterInternal(MyAuthenticationFilter.java:33)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+12:38:18.038 [http-nio-3030-exec-4] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.NullPointerException: Cannot invoke "com.simpletiktok.simpletiktok.utils.JwtUtils$JwtConfig.getHeader()" because the return value of "com.simpletiktok.simpletiktok.utils.JwtUtils.getCurrentConfig()" is null
+	at com.simpletiktok.simpletiktok.config.filter.MyAuthenticationFilter.doFilterInternal(MyAuthenticationFilter.java:33)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+12:53:46.668 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+12:53:46.875 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+12:53:49.265 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+12:53:49.280 [main] INFO  c.s.s.SimpleTikTokApplication - Starting SimpleTikTokApplication using Java 20.0.1 with PID 15472 (/Users/silva/Desktop/simpleTikTokBackend/simpleTikTok/target/classes started by silva in /Users/silva/Desktop/simpleTikTokBackend)
+12:53:49.281 [main] INFO  c.s.s.SimpleTikTokApplication - No active profile set, falling back to 1 default profile: "default"
+12:53:49.738 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+12:53:49.739 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+12:53:49.756 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+12:53:49.811 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'loveMapper' and 'com.simpletiktok.simpletiktok.data.mapper.LoveMapper' mapperInterface. Bean already defined with the same name!
+12:53:49.812 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.simpletiktok.simpletiktok.data.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+12:53:49.812 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'videoMapper' and 'com.simpletiktok.simpletiktok.data.mapper.VideoMapper' mapperInterface. Bean already defined with the same name!
+12:53:49.812 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.simpletiktok.simpletiktok.data.mapper]' package. Please check your configuration.
+12:53:50.188 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 3030 (http)
+12:53:50.194 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3030"]
+12:53:50.195 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:53:50.195 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+12:53:50.219 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:53:50.219 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 920 ms
+12:53:50.408 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.simpletiktok.simpletiktok.data.entity.Love".
+12:53:50.409 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.simpletiktok.simpletiktok.data.entity.Love ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+12:53:50.508 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+12:53:50.775 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7845ee8a
+12:53:50.776 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+12:53:51.274 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
+12:53:51.315 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1fe37d27, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1718de70, org.springframework.security.web.context.SecurityContextHolderFilter@423d662a, org.springframework.security.web.header.HeaderWriterFilter@55731ccd, org.springframework.web.filter.CorsFilter@6bfc5296, com.simpletiktok.simpletiktok.config.filter.MyAuthenticationFilter@61c87f1b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@279e85eb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7156f8cf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41736818, org.springframework.security.web.session.SessionManagementFilter@2eb31735, org.springframework.security.web.access.ExceptionTranslationFilter@28f6a008, org.springframework.security.web.access.intercept.AuthorizationFilter@1016b44e]
+12:53:51.685 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-3030"]
+12:53:51.691 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 3030 (http) with context path ''
+12:53:51.702 [main] INFO  c.s.s.SimpleTikTokApplication - Started SimpleTikTokApplication in 2.594 seconds (process running for 2.984)
+12:53:52.148 [RMI TCP Connection(2)-10.61.213.253] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+12:53:52.148 [RMI TCP Connection(2)-10.61.213.253] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+12:53:52.149 [RMI TCP Connection(2)-10.61.213.253] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+12:53:57.866 [http-nio-3030-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.IllegalStateException: JwtConfig is not initialized
+	at com.simpletiktok.simpletiktok.utils.JwtUtils.getCurrentConfig(JwtUtils.java:176)
+	at com.simpletiktok.simpletiktok.config.filter.MyAuthenticationFilter.doFilterInternal(MyAuthenticationFilter.java:33)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+13:38:37.824 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:38:37.944 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:38:39.945 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+13:38:39.961 [main] INFO  c.s.s.SimpleTikTokApplication - Starting SimpleTikTokApplication using Java 20.0.1 with PID 16053 (/Users/silva/Desktop/simpleTikTokBackend/simpleTikTok/target/classes started by silva in /Users/silva/Desktop/simpleTikTokBackend)
+13:38:39.962 [main] INFO  c.s.s.SimpleTikTokApplication - No active profile set, falling back to 1 default profile: "default"
+13:38:40.398 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+13:38:40.399 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+13:38:40.414 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+13:38:40.463 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'loveMapper' and 'com.simpletiktok.simpletiktok.data.mapper.LoveMapper' mapperInterface. Bean already defined with the same name!
+13:38:40.463 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.simpletiktok.simpletiktok.data.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+13:38:40.463 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'videoMapper' and 'com.simpletiktok.simpletiktok.data.mapper.VideoMapper' mapperInterface. Bean already defined with the same name!
+13:38:40.463 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.simpletiktok.simpletiktok.data.mapper]' package. Please check your configuration.
+13:38:40.814 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 3030 (http)
+13:38:40.819 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3030"]
+13:38:40.820 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:38:40.820 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+13:38:40.841 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:38:40.841 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 860 ms
+13:38:41.039 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.simpletiktok.simpletiktok.data.entity.Love".
+13:38:41.041 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.simpletiktok.simpletiktok.data.entity.Love ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+13:38:41.133 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:38:41.494 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5296f00c
+13:38:41.496 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:38:42.020 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
+13:38:42.059 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5b1cedfd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1fe2c5ad, org.springframework.security.web.context.SecurityContextHolderFilter@eda7dd3, org.springframework.security.web.header.HeaderWriterFilter@6d387e9b, org.springframework.web.filter.CorsFilter@6334c0d8, com.simpletiktok.simpletiktok.config.filter.MyAuthenticationFilter@687b0ddc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1028a747, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27422187, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@74ed3be4, org.springframework.security.web.session.SessionManagementFilter@69e736bf, org.springframework.security.web.access.ExceptionTranslationFilter@16279a5d, org.springframework.security.web.access.intercept.AuthorizationFilter@4a45ff31]
+13:38:42.435 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-3030"]
+13:38:42.442 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 3030 (http) with context path ''
+13:38:42.452 [main] INFO  c.s.s.SimpleTikTokApplication - Started SimpleTikTokApplication in 2.662 seconds (process running for 3.083)
+13:38:42.623 [RMI TCP Connection(2)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:38:42.623 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+13:38:42.624 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+13:39:24.409 [http-nio-3030-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/xml;charset=UTF-8' is not supported]
+13:42:44.395 [http-nio-3030-exec-5] INFO  c.s.s.data.controller.UserController - [347037ad-d780-4ae4-854b-91881cf3786f] System Info: OS: Mac OS X, Version: 14.5, JVM Name: OpenJDK 64-Bit Server VM, JVM Version: 20.0.1+9-29
+13:42:44.400 [http-nio-3030-exec-5] INFO  c.s.s.data.controller.UserController - [347037ad-d780-4ae4-854b-91881cf3786f] Request: [{"username":"admin","password":"123","confirmedPassword":"123"}]
+13:42:44.402 [http-nio-3030-exec-5] INFO  c.s.s.data.controller.UserController - [347037ad-d780-4ae4-854b-91881cf3786f] UserController.sign executed in 6 ms
+13:42:44.403 [http-nio-3030-exec-5] INFO  c.s.s.data.controller.UserController - [347037ad-d780-4ae4-854b-91881cf3786f] Response: {"code":200,"msg":"操作成功","data":{"error_message":"用户名不能为空"}}
+13:43:09.129 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:43:09.336 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:43:11.732 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+13:43:11.741 [main] INFO  c.s.s.SimpleTikTokApplication - Starting SimpleTikTokApplication using Java 20.0.1 with PID 16137 (/Users/silva/Desktop/simpleTikTokBackend/simpleTikTok/target/classes started by silva in /Users/silva/Desktop/simpleTikTokBackend)
+13:43:11.742 [main] INFO  c.s.s.SimpleTikTokApplication - No active profile set, falling back to 1 default profile: "default"
+13:43:12.212 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+13:43:12.214 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+13:43:12.229 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+13:43:12.287 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'loveMapper' and 'com.simpletiktok.simpletiktok.data.mapper.LoveMapper' mapperInterface. Bean already defined with the same name!
+13:43:12.287 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.simpletiktok.simpletiktok.data.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+13:43:12.287 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'videoMapper' and 'com.simpletiktok.simpletiktok.data.mapper.VideoMapper' mapperInterface. Bean already defined with the same name!
+13:43:12.287 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.simpletiktok.simpletiktok.data.mapper]' package. Please check your configuration.
+13:43:12.689 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 3030 (http)
+13:43:12.694 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3030"]
+13:43:12.695 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:43:12.695 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+13:43:12.723 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:43:12.723 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 963 ms
+13:43:12.938 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.simpletiktok.simpletiktok.data.entity.Love".
+13:43:12.939 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.simpletiktok.simpletiktok.data.entity.Love ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+13:43:13.041 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:43:13.502 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1b994617
+13:43:13.504 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:43:14.651 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
+13:43:14.742 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5fafd099, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@580e01cd, org.springframework.security.web.context.SecurityContextHolderFilter@677d4cea, org.springframework.security.web.header.HeaderWriterFilter@51d76ad3, org.springframework.web.filter.CorsFilter@1e9a10e9, com.simpletiktok.simpletiktok.config.filter.MyAuthenticationFilter@671da0f9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9d2c0ed, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@40b678b3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@233d2b76, org.springframework.security.web.session.SessionManagementFilter@386ea60f, org.springframework.security.web.access.ExceptionTranslationFilter@5687ade6, org.springframework.security.web.access.intercept.AuthorizationFilter@5d1eb214]
+13:43:15.547 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-3030"]
+13:43:15.561 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 3030 (http) with context path ''
+13:43:15.577 [main] INFO  c.s.s.SimpleTikTokApplication - Started SimpleTikTokApplication in 3.985 seconds (process running for 4.749)
+13:43:15.903 [RMI TCP Connection(2)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:43:15.904 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+13:43:15.905 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+13:43:17.603 [http-nio-3030-exec-2] INFO  c.s.s.data.controller.UserController - [0bb2027a-f9fb-47fc-98e0-30bcfd2bd7e9] System Info: OS: Mac OS X, Version: 14.5, JVM Name: OpenJDK 64-Bit Server VM, JVM Version: 20.0.1+9-29
+13:43:17.611 [http-nio-3030-exec-2] INFO  c.s.s.data.controller.UserController - [0bb2027a-f9fb-47fc-98e0-30bcfd2bd7e9] Request: [{"username":"admin","password":"123","confirmedPassword":"123"}]
+13:43:28.567 [http-nio-3030-exec-2] INFO  c.s.s.data.controller.UserController - [0bb2027a-f9fb-47fc-98e0-30bcfd2bd7e9] UserController.sign executed in 10963 ms
+13:43:28.571 [http-nio-3030-exec-2] INFO  c.s.s.data.controller.UserController - [0bb2027a-f9fb-47fc-98e0-30bcfd2bd7e9] Response: {"code":200,"msg":"操作成功","data":{"error_message":"用户名不能为空"}}
+13:43:28.736 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:43:29.132 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:43:56.581 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+13:43:56.595 [main] INFO  c.s.s.SimpleTikTokApplication - Starting SimpleTikTokApplication using Java 20.0.1 with PID 16155 (/Users/silva/Desktop/simpleTikTokBackend/simpleTikTok/target/classes started by silva in /Users/silva/Desktop/simpleTikTokBackend)
+13:43:56.596 [main] INFO  c.s.s.SimpleTikTokApplication - No active profile set, falling back to 1 default profile: "default"
+13:43:57.054 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+13:43:57.055 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+13:43:57.070 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+13:43:57.122 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'loveMapper' and 'com.simpletiktok.simpletiktok.data.mapper.LoveMapper' mapperInterface. Bean already defined with the same name!
+13:43:57.122 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.simpletiktok.simpletiktok.data.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+13:43:57.122 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'videoMapper' and 'com.simpletiktok.simpletiktok.data.mapper.VideoMapper' mapperInterface. Bean already defined with the same name!
+13:43:57.123 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.simpletiktok.simpletiktok.data.mapper]' package. Please check your configuration.
+13:43:57.567 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 3030 (http)
+13:43:57.573 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3030"]
+13:43:57.574 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:43:57.574 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+13:43:57.597 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:43:57.597 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 979 ms
+13:43:57.882 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.simpletiktok.simpletiktok.data.entity.Love".
+13:43:57.884 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.simpletiktok.simpletiktok.data.entity.Love ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+13:43:57.978 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:43:58.255 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@379b4e86
+13:43:58.256 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:43:58.875 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
+13:43:58.923 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7af7c9aa, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@208b8425, org.springframework.security.web.context.SecurityContextHolderFilter@543a7605, org.springframework.security.web.header.HeaderWriterFilter@1e487d57, org.springframework.web.filter.CorsFilter@3ec52163, com.simpletiktok.simpletiktok.config.filter.MyAuthenticationFilter@761f234c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9d7a853, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1028a747, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5b1cedfd, org.springframework.security.web.session.SessionManagementFilter@533a27f8, org.springframework.security.web.access.ExceptionTranslationFilter@21251e43, org.springframework.security.web.access.intercept.AuthorizationFilter@5a6d4dee]
+13:43:59.334 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-3030"]
+13:43:59.341 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 3030 (http) with context path ''
+13:43:59.352 [main] INFO  c.s.s.SimpleTikTokApplication - Started SimpleTikTokApplication in 2.916 seconds (process running for 3.263)
+13:43:59.931 [RMI TCP Connection(3)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:43:59.931 [RMI TCP Connection(3)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+13:43:59.932 [RMI TCP Connection(3)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+13:44:00.481 [http-nio-3030-exec-2] INFO  c.s.s.data.controller.UserController - [0e81ccb7-5514-456f-a716-d0ac7c5d7167] System Info: OS: Mac OS X, Version: 14.5, JVM Name: OpenJDK 64-Bit Server VM, JVM Version: 20.0.1+9-29
+13:44:00.484 [http-nio-3030-exec-2] INFO  c.s.s.data.controller.UserController - [0e81ccb7-5514-456f-a716-d0ac7c5d7167] Request: [{"username":"admin","password":"123","confirmedPassword":"123"}]
+13:44:00.655 [http-nio-3030-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'username' in 'where clause'
+### The error may exist in com/simpletiktok/simpletiktok/data/mapper/UserMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  author,nickname,password,avatar,gender,user_age,follower_count,aweme_count,follower,signature,following_count,cover_url  FROM user      WHERE  (username = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'username' in 'where clause'
+; bad SQL grammar []] with root cause
+java.sql.SQLSyntaxErrorException: Unknown column 'username' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:912)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy107.query(Unknown Source)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:81)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy106.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy103.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:164)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:149)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:90)
+	at jdk.proxy2/jdk.proxy2.$Proxy104.selectList(Unknown Source)
+	at com.simpletiktok.simpletiktok.data.service.impl.UserServiceImpl.register(UserServiceImpl.java:85)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:351)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.simpletiktok.simpletiktok.data.service.impl.UserServiceImpl$$SpringCGLIB$$0.register(<generated>)
+	at com.simpletiktok.simpletiktok.data.controller.UserController.sign(UserController.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:351)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.simpletiktok.simpletiktok.aop.LoggingAspect.logMethod(LoggingAspect.java:51)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:173)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.simpletiktok.simpletiktok.data.controller.UserController$$SpringCGLIB$$0.sign(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:925)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340)
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at com.simpletiktok.simpletiktok.config.filter.MyAuthenticationFilter.doFilterInternal(MyAuthenticationFilter.java:59)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+13:44:56.084 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:44:56.294 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:44:58.178 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+13:44:58.193 [main] INFO  c.s.s.SimpleTikTokApplication - Starting SimpleTikTokApplication using Java 20.0.1 with PID 16174 (/Users/silva/Desktop/simpleTikTokBackend/simpleTikTok/target/classes started by silva in /Users/silva/Desktop/simpleTikTokBackend)
+13:44:58.194 [main] INFO  c.s.s.SimpleTikTokApplication - No active profile set, falling back to 1 default profile: "default"
+13:44:58.628 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+13:44:58.629 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+13:44:58.643 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+13:44:58.694 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'loveMapper' and 'com.simpletiktok.simpletiktok.data.mapper.LoveMapper' mapperInterface. Bean already defined with the same name!
+13:44:58.694 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.simpletiktok.simpletiktok.data.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+13:44:58.694 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'videoMapper' and 'com.simpletiktok.simpletiktok.data.mapper.VideoMapper' mapperInterface. Bean already defined with the same name!
+13:44:58.694 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.simpletiktok.simpletiktok.data.mapper]' package. Please check your configuration.
+13:44:59.059 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 3030 (http)
+13:44:59.065 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3030"]
+13:44:59.066 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:44:59.066 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+13:44:59.089 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:44:59.089 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 876 ms
+13:44:59.308 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.simpletiktok.simpletiktok.data.entity.Love".
+13:44:59.311 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.simpletiktok.simpletiktok.data.entity.Love ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+13:44:59.415 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:44:59.683 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@52a74328
+13:44:59.684 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:45:00.275 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
+13:45:00.314 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7af7c9aa, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@208b8425, org.springframework.security.web.context.SecurityContextHolderFilter@543a7605, org.springframework.security.web.header.HeaderWriterFilter@1e487d57, org.springframework.web.filter.CorsFilter@3ec52163, com.simpletiktok.simpletiktok.config.filter.MyAuthenticationFilter@6a6e9289, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9d7a853, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1028a747, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5b1cedfd, org.springframework.security.web.session.SessionManagementFilter@533a27f8, org.springframework.security.web.access.ExceptionTranslationFilter@21251e43, org.springframework.security.web.access.intercept.AuthorizationFilter@5a6d4dee]
+13:45:00.733 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-3030"]
+13:45:00.743 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 3030 (http) with context path ''
+13:45:00.757 [main] INFO  c.s.s.SimpleTikTokApplication - Started SimpleTikTokApplication in 2.711 seconds (process running for 3.027)
+13:45:00.958 [http-nio-3030-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:45:00.959 [http-nio-3030-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+13:45:00.960 [http-nio-3030-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+13:45:01.000 [http-nio-3030-exec-2] INFO  c.s.s.data.controller.UserController - [62b9a697-3948-42e2-85c2-348e7192658e] System Info: OS: Mac OS X, Version: 14.5, JVM Name: OpenJDK 64-Bit Server VM, JVM Version: 20.0.1+9-29
+13:45:01.005 [http-nio-3030-exec-2] INFO  c.s.s.data.controller.UserController - [62b9a697-3948-42e2-85c2-348e7192658e] Request: [{"username":"admin","password":"123","confirmedPassword":"123"}]
+13:45:01.183 [http-nio-3030-exec-2] INFO  c.s.s.data.controller.UserController - [62b9a697-3948-42e2-85c2-348e7192658e] UserController.sign executed in 184 ms
+13:45:01.185 [http-nio-3030-exec-2] INFO  c.s.s.data.controller.UserController - [62b9a697-3948-42e2-85c2-348e7192658e] Response: {"code":200,"msg":"操作成功","data":{"error_message":"success"}}
+13:55:46.293 [http-nio-3030-exec-5] INFO  c.s.s.data.controller.UserController - [ff7a8c62-f0dd-4802-afaf-212e5622f4ae] System Info: OS: Mac OS X, Version: 14.5, JVM Name: OpenJDK 64-Bit Server VM, JVM Version: 20.0.1+9-29
+13:55:46.295 [http-nio-3030-exec-5] INFO  c.s.s.data.controller.UserController - [ff7a8c62-f0dd-4802-afaf-212e5622f4ae] Request: [{"author":"admin","password":"123","confirmedPassword":"123"}]
+13:55:46.296 [http-nio-3030-exec-5] INFO  c.s.s.data.controller.UserController - [ff7a8c62-f0dd-4802-afaf-212e5622f4ae] UserController.sign executed in 4 ms
+13:55:46.298 [http-nio-3030-exec-5] INFO  c.s.s.data.controller.UserController - [ff7a8c62-f0dd-4802-afaf-212e5622f4ae] Response: {"code":200,"msg":"操作成功","data":{"error_message":"用户名不能为空"}}
+13:55:59.588 [http-nio-3030-exec-6] INFO  c.s.s.data.controller.UserController - [a61fec1e-f5e1-4b7b-b521-2cab0eb8b60f] System Info: OS: Mac OS X, Version: 14.5, JVM Name: OpenJDK 64-Bit Server VM, JVM Version: 20.0.1+9-29
+13:55:59.589 [http-nio-3030-exec-6] INFO  c.s.s.data.controller.UserController - [a61fec1e-f5e1-4b7b-b521-2cab0eb8b60f] Request: [{"author":"admin","password":"123","confirmedPassword":"123"}]
+13:55:59.590 [http-nio-3030-exec-6] INFO  c.s.s.data.controller.UserController - [a61fec1e-f5e1-4b7b-b521-2cab0eb8b60f] UserController.sign executed in 2 ms
+13:55:59.592 [http-nio-3030-exec-6] INFO  c.s.s.data.controller.UserController - [a61fec1e-f5e1-4b7b-b521-2cab0eb8b60f] Response: {"code":200,"msg":"操作成功","data":{"error_message":"用户名不能为空"}}
+13:56:50.483 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:56:50.612 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:56:52.507 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+13:56:52.517 [main] INFO  c.s.s.SimpleTikTokApplication - Starting SimpleTikTokApplication using Java 20.0.1 with PID 16411 (/Users/silva/Desktop/simpleTikTokBackend/simpleTikTok/target/classes started by silva in /Users/silva/Desktop/simpleTikTokBackend)
+13:56:52.517 [main] INFO  c.s.s.SimpleTikTokApplication - No active profile set, falling back to 1 default profile: "default"
+13:56:52.968 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+13:56:52.969 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+13:56:52.983 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+13:56:53.032 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'loveMapper' and 'com.simpletiktok.simpletiktok.data.mapper.LoveMapper' mapperInterface. Bean already defined with the same name!
+13:56:53.032 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.simpletiktok.simpletiktok.data.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+13:56:53.032 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'videoMapper' and 'com.simpletiktok.simpletiktok.data.mapper.VideoMapper' mapperInterface. Bean already defined with the same name!
+13:56:53.032 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.simpletiktok.simpletiktok.data.mapper]' package. Please check your configuration.
+13:56:53.390 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 3030 (http)
+13:56:53.395 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3030"]
+13:56:53.396 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:56:53.396 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+13:56:53.422 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:56:53.423 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 880 ms
+13:56:53.632 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.simpletiktok.simpletiktok.data.entity.Love".
+13:56:53.634 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.simpletiktok.simpletiktok.data.entity.Love ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+13:56:53.726 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:56:54.067 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@33765d22
+13:56:54.068 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:56:54.626 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
+13:56:54.688 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@126e2710, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1529d534, org.springframework.security.web.context.SecurityContextHolderFilter@7307ae6, org.springframework.security.web.header.HeaderWriterFilter@4babe06f, org.springframework.web.filter.CorsFilter@1a22325d, com.simpletiktok.simpletiktok.config.filter.MyAuthenticationFilter@4aac81ca, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@762db992, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@71e9640, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3c5cb013, org.springframework.security.web.session.SessionManagementFilter@563bd6a4, org.springframework.security.web.access.ExceptionTranslationFilter@24890021, org.springframework.security.web.access.intercept.AuthorizationFilter@598ff2b3]
+13:56:55.136 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-3030"]
+13:56:55.143 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 3030 (http) with context path ''
+13:56:55.154 [main] INFO  c.s.s.SimpleTikTokApplication - Started SimpleTikTokApplication in 2.779 seconds (process running for 3.073)
+13:56:55.342 [RMI TCP Connection(2)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:56:55.342 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+13:56:55.343 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+13:56:56.925 [http-nio-3030-exec-2] INFO  c.s.s.data.controller.UserController - [528893e6-3399-4299-8295-080fc904a5a6] System Info: OS: Mac OS X, Version: 14.5, JVM Name: OpenJDK 64-Bit Server VM, JVM Version: 20.0.1+9-29
+13:56:56.929 [http-nio-3030-exec-2] INFO  c.s.s.data.controller.UserController - [528893e6-3399-4299-8295-080fc904a5a6] Request: [{"author":"admin","password":"123","confirmedPassword":"123"}]
+13:56:56.954 [http-nio-3030-exec-2] INFO  c.s.s.data.controller.UserController - [528893e6-3399-4299-8295-080fc904a5a6] UserController.sign executed in 30 ms
+13:56:56.956 [http-nio-3030-exec-2] INFO  c.s.s.data.controller.UserController - [528893e6-3399-4299-8295-080fc904a5a6] Response: {"code":200,"msg":"操作成功","data":{"error_message":"用户已存在"}}
+13:58:57.205 [http-nio-3030-exec-7] INFO  c.s.s.d.controller.SessionController - [17add486-d1bc-4a5f-8ea8-cc1b27d6c2f6] System Info: OS: Mac OS X, Version: 14.5, JVM Name: OpenJDK 64-Bit Server VM, JVM Version: 20.0.1+9-29
+13:58:57.206 [http-nio-3030-exec-7] INFO  c.s.s.d.controller.SessionController - [17add486-d1bc-4a5f-8ea8-cc1b27d6c2f6] Request: [{"password":"123","author":"admin"}]
+13:58:57.406 [http-nio-3030-exec-7] INFO  c.s.s.d.controller.SessionController - [17add486-d1bc-4a5f-8ea8-cc1b27d6c2f6] SessionController.login executed in 201 ms
+13:58:57.407 [http-nio-3030-exec-7] INFO  c.s.s.d.controller.SessionController - [17add486-d1bc-4a5f-8ea8-cc1b27d6c2f6] Response: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6InNwcmluZ2Jvb3QzLXNlY3VyaXR5IiwiYXVkIjpudWxsLCJpYXQiOjE3MTgzNDQ3MzcsImV4cCI6MTcxODk0OTUzN30.ML8A2GI2cVRKFVmBzek-SKcVu-MCpU1AWaQW8dY-QnU"}
+14:00:24.249 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:00:24.408 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:00:26.385 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+14:00:26.402 [main] INFO  c.s.s.SimpleTikTokApplication - Starting SimpleTikTokApplication using Java 20.0.1 with PID 16453 (/Users/silva/Desktop/simpleTikTokBackend/simpleTikTok/target/classes started by silva in /Users/silva/Desktop/simpleTikTokBackend)
+14:00:26.402 [main] INFO  c.s.s.SimpleTikTokApplication - No active profile set, falling back to 1 default profile: "default"
+14:00:26.862 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+14:00:26.864 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+14:00:26.878 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+14:00:26.928 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'loveMapper' and 'com.simpletiktok.simpletiktok.data.mapper.LoveMapper' mapperInterface. Bean already defined with the same name!
+14:00:26.928 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.simpletiktok.simpletiktok.data.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+14:00:26.928 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'videoMapper' and 'com.simpletiktok.simpletiktok.data.mapper.VideoMapper' mapperInterface. Bean already defined with the same name!
+14:00:26.928 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.simpletiktok.simpletiktok.data.mapper]' package. Please check your configuration.
+14:00:27.283 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 3030 (http)
+14:00:27.288 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3030"]
+14:00:27.288 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+14:00:27.288 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+14:00:27.312 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:00:27.312 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 888 ms
+14:00:27.503 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.simpletiktok.simpletiktok.data.entity.Love".
+14:00:27.504 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.simpletiktok.simpletiktok.data.entity.Love ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+14:00:27.595 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:00:27.932 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3d2eb7fa
+14:00:27.934 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:00:28.461 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
+14:00:28.502 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@67cd193d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@34525143, org.springframework.security.web.context.SecurityContextHolderFilter@74070994, org.springframework.security.web.header.HeaderWriterFilter@22cce199, org.springframework.web.filter.CorsFilter@126e2710, com.simpletiktok.simpletiktok.config.filter.MyAuthenticationFilter@362a6aa5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@542aec6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@15a591d9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1529d534, org.springframework.security.web.session.SessionManagementFilter@3cc548f6, org.springframework.security.web.access.ExceptionTranslationFilter@4dc16fc9, org.springframework.security.web.access.intercept.AuthorizationFilter@5aa5b3af]
+14:00:28.878 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-3030"]
+14:00:28.885 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 3030 (http) with context path ''
+14:00:28.895 [main] INFO  c.s.s.SimpleTikTokApplication - Started SimpleTikTokApplication in 2.66 seconds (process running for 3.034)
+14:00:29.124 [RMI TCP Connection(2)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:00:29.124 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+14:00:29.125 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+14:01:24.371 [http-nio-3030-exec-2] INFO  c.s.s.d.controller.SessionController - [8648441e-97e6-4a23-914f-b5f4f912f3a3] System Info: OS: Mac OS X, Version: 14.5, JVM Name: OpenJDK 64-Bit Server VM, JVM Version: 20.0.1+9-29
+14:01:24.374 [http-nio-3030-exec-2] INFO  c.s.s.d.controller.SessionController - [8648441e-97e6-4a23-914f-b5f4f912f3a3] Request: [{"password":"123","author":"admin"}]
+14:01:24.550 [http-nio-3030-exec-2] INFO  c.s.s.d.controller.SessionController - [8648441e-97e6-4a23-914f-b5f4f912f3a3] SessionController.login executed in 179 ms
+14:01:24.551 [http-nio-3030-exec-2] INFO  c.s.s.d.controller.SessionController - [8648441e-97e6-4a23-914f-b5f4f912f3a3] Response: {"code":200,"msg":"操作成功","data":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImlzcyI6InNwcmluZ2Jvb3QzLXNlY3VyaXR5IiwiYXVkIjpudWxsLCJpYXQiOjE3MTgzNDQ4ODQsImV4cCI6MTcxODk0OTY4NH0.CXq5mRs7hFcVr-QffLD-15BnSPpV5zAo97CMK2mmVUU"}}
+16:15:50.329 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:15:50.454 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16:18:28.458 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+16:18:28.474 [main] INFO  c.s.s.SimpleTikTokApplication - Starting SimpleTikTokApplication using Java 20.0.1 with PID 18395 (/Users/silva/Desktop/simpleTikTokBackend/simpleTikTok/target/classes started by silva in /Users/silva/Desktop/simpleTikTokBackend)
+16:18:28.475 [main] INFO  c.s.s.SimpleTikTokApplication - No active profile set, falling back to 1 default profile: "default"
+16:18:28.973 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+16:18:28.974 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+16:18:28.989 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+16:18:29.045 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'loveMapper' and 'com.simpletiktok.simpletiktok.data.mapper.LoveMapper' mapperInterface. Bean already defined with the same name!
+16:18:29.045 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.simpletiktok.simpletiktok.data.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+16:18:29.045 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'videoMapper' and 'com.simpletiktok.simpletiktok.data.mapper.VideoMapper' mapperInterface. Bean already defined with the same name!
+16:18:29.045 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.simpletiktok.simpletiktok.data.mapper]' package. Please check your configuration.
+16:18:29.405 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 3030 (http)
+16:18:29.410 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3030"]
+16:18:29.410 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:18:29.410 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+16:18:29.432 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:18:29.432 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 939 ms
+16:18:29.636 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.simpletiktok.simpletiktok.data.entity.Love".
+16:18:29.638 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.simpletiktok.simpletiktok.data.entity.Love ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+16:18:29.730 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:18:30.132 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2d3eb1ea
+16:18:30.135 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:18:30.239 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityConstant': Invocation of init method failed
+16:18:30.239 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:18:30.384 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16:18:30.386 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+16:18:30.406 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+16:18:30.417 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityConstant': Invocation of init method failed
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.simpletiktok.simpletiktok.SimpleTikTokApplication.main(SimpleTikTokApplication.java:14)
+Caused by: org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'version' in 'field list'
+### The error may exist in com/simpletiktok/simpletiktok/data/mapper/UserMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  author,nickname,password,avatar,gender,user_age,follower_count,aweme_count,follower,signature,following_count,cover_url,version  FROM user
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'version' in 'field list'
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:246)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at jdk.proxy2/jdk.proxy2.$Proxy103.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:164)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:149)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:90)
+	at jdk.proxy2/jdk.proxy2.$Proxy104.selectList(Unknown Source)
+	at com.simpletiktok.simpletiktok.config.SecurityConstant.init(SecurityConstant.java:57)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219)
+	... 18 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'version' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:912)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy107.query(Unknown Source)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:81)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy106.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 31 common frames omitted
+16:19:14.344 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+16:19:14.360 [main] INFO  c.s.s.SimpleTikTokApplication - Starting SimpleTikTokApplication using Java 20.0.1 with PID 18409 (/Users/silva/Desktop/simpleTikTokBackend/simpleTikTok/target/classes started by silva in /Users/silva/Desktop/simpleTikTokBackend)
+16:19:14.361 [main] INFO  c.s.s.SimpleTikTokApplication - No active profile set, falling back to 1 default profile: "default"
+16:19:14.897 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+16:19:14.899 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+16:19:14.917 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+16:19:14.975 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'loveMapper' and 'com.simpletiktok.simpletiktok.data.mapper.LoveMapper' mapperInterface. Bean already defined with the same name!
+16:19:14.975 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.simpletiktok.simpletiktok.data.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+16:19:14.975 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'videoMapper' and 'com.simpletiktok.simpletiktok.data.mapper.VideoMapper' mapperInterface. Bean already defined with the same name!
+16:19:14.975 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.simpletiktok.simpletiktok.data.mapper]' package. Please check your configuration.
+16:19:15.408 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 3030 (http)
+16:19:15.414 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3030"]
+16:19:15.414 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:19:15.414 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+16:19:15.442 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:19:15.442 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1060 ms
+16:19:15.644 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.simpletiktok.simpletiktok.data.entity.Love".
+16:19:15.645 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.simpletiktok.simpletiktok.data.entity.Love ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+16:19:15.733 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:19:16.009 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b8fcdf2
+16:19:16.010 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:19:16.525 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
+16:19:16.566 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3c5cb013, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f69462f, org.springframework.security.web.context.SecurityContextHolderFilter@724e0a77, org.springframework.security.web.header.HeaderWriterFilter@28796d0e, org.springframework.web.filter.CorsFilter@432b883, com.simpletiktok.simpletiktok.config.filter.MyAuthenticationFilter@e72fb04, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@71e9640, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2932721e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f09c282, org.springframework.security.web.session.SessionManagementFilter@74070994, org.springframework.security.web.access.ExceptionTranslationFilter@7205a8b7, org.springframework.security.web.access.intercept.AuthorizationFilter@34525143]
+16:19:16.960 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-3030"]
+16:19:16.967 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 3030 (http) with context path ''
+16:19:16.978 [main] INFO  c.s.s.SimpleTikTokApplication - Started SimpleTikTokApplication in 2.79 seconds (process running for 3.215)
+16:19:17.508 [RMI TCP Connection(3)-10.61.213.253] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:19:17.508 [RMI TCP Connection(3)-10.61.213.253] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:19:17.509 [RMI TCP Connection(3)-10.61.213.253] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+16:19:19.968 [http-nio-3030-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'username' for method parameter type String is not present]
+16:19:51.580 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:19:51.704 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16:19:53.717 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+16:19:53.733 [main] INFO  c.s.s.SimpleTikTokApplication - Starting SimpleTikTokApplication using Java 20.0.1 with PID 18436 (/Users/silva/Desktop/simpleTikTokBackend/simpleTikTok/target/classes started by silva in /Users/silva/Desktop/simpleTikTokBackend)
+16:19:53.733 [main] INFO  c.s.s.SimpleTikTokApplication - No active profile set, falling back to 1 default profile: "default"
+16:19:54.176 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+16:19:54.178 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+16:19:54.192 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+16:19:54.240 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'loveMapper' and 'com.simpletiktok.simpletiktok.data.mapper.LoveMapper' mapperInterface. Bean already defined with the same name!
+16:19:54.241 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'userMapper' and 'com.simpletiktok.simpletiktok.data.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+16:19:54.241 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'videoMapper' and 'com.simpletiktok.simpletiktok.data.mapper.VideoMapper' mapperInterface. Bean already defined with the same name!
+16:19:54.241 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.simpletiktok.simpletiktok.data.mapper]' package. Please check your configuration.
+16:19:54.593 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 3030 (http)
+16:19:54.597 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-3030"]
+16:19:54.598 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:19:54.598 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+16:19:54.621 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:19:54.621 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 868 ms
+16:19:54.811 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.simpletiktok.simpletiktok.data.entity.Love".
+16:19:54.813 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.simpletiktok.simpletiktok.data.entity.Love ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+16:19:54.904 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:19:55.224 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@54d2f5d3
+16:19:55.225 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:19:55.777 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
+16:19:55.821 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@267e0ca0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3e3a07ab, org.springframework.security.web.context.SecurityContextHolderFilter@5c6be812, org.springframework.security.web.header.HeaderWriterFilter@71c69628, org.springframework.web.filter.CorsFilter@3f3a529f, com.simpletiktok.simpletiktok.config.filter.MyAuthenticationFilter@4315fe1b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3fed0c04, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@235dacd7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@ce8b59e, org.springframework.security.web.session.SessionManagementFilter@7205a8b7, org.springframework.security.web.access.ExceptionTranslationFilter@69e736bf, org.springframework.security.web.access.intercept.AuthorizationFilter@2318651f]
+16:19:56.245 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-3030"]
+16:19:56.252 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 3030 (http) with context path ''
+16:19:56.262 [main] INFO  c.s.s.SimpleTikTokApplication - Started SimpleTikTokApplication in 2.713 seconds (process running for 3.102)
+16:19:56.416 [RMI TCP Connection(3)-10.61.213.253] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:19:56.416 [RMI TCP Connection(3)-10.61.213.253] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:19:56.417 [RMI TCP Connection(3)-10.61.213.253] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+16:19:57.952 [http-nio-3030-exec-2] INFO  c.s.s.d.controller.SessionController - [e53560ed-fd4a-4a10-8a89-b3ab6cc58775] System Info: OS: Mac OS X, Version: 14.5, JVM Name: OpenJDK 64-Bit Server VM, JVM Version: 20.0.1+9-29
+16:19:57.957 [http-nio-3030-exec-2] INFO  c.s.s.d.controller.SessionController - [e53560ed-fd4a-4a10-8a89-b3ab6cc58775] Request: ["admin"]
+16:19:58.021 [http-nio-3030-exec-2] INFO  c.s.s.d.controller.SessionController - [e53560ed-fd4a-4a10-8a89-b3ab6cc58775] SessionController.logout executed in 67 ms
+16:19:58.022 [http-nio-3030-exec-2] INFO  c.s.s.d.controller.SessionController - [e53560ed-fd4a-4a10-8a89-b3ab6cc58775] Response: {"code":200,"msg":"操作成功","data":"登出成功！"}
+16:20:08.209 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:20:08.346 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

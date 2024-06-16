@@ -1,7 +1,6 @@
 package com.simpletiktok.simpletiktok.data.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -14,6 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/like")
-public class LikeController {
+public class LoveController {
 
 }

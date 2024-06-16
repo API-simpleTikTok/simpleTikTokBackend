@@ -1,6 +1,6 @@
 package com.simpletiktok.simpletiktok.data.service;
 
-import com.simpletiktok.simpletiktok.data.entity.Like;
+import com.simpletiktok.simpletiktok.data.entity.Love;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author ricetea
  * @since 2024-06-06
  */
-public interface ILikeService extends IService<Like> {
+public interface ILoveService extends IService<Love>
+{
 
 }

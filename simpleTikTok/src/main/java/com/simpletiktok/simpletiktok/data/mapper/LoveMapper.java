@@ -1,6 +1,6 @@
 package com.simpletiktok.simpletiktok.data.mapper;
 
-import com.simpletiktok.simpletiktok.data.entity.Like;
+import com.simpletiktok.simpletiktok.data.entity.Love;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -14,6 +14,6 @@ import org.apache.ibatis.annotations.Mapper;
  */
 
 @Mapper
-public interface LikeMapper extends BaseMapper<Like> {
+public interface LoveMapper extends BaseMapper<Love> {
 
 }
