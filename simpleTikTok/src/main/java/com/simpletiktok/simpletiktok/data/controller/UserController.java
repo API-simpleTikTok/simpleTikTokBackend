@@ -2,6 +2,7 @@ package com.simpletiktok.simpletiktok.data.controller;
 
 import com.simpletiktok.simpletiktok.data.entity.Love;
 import com.simpletiktok.simpletiktok.data.entity.User;
+import com.simpletiktok.simpletiktok.data.entity.Video;
 import com.simpletiktok.simpletiktok.data.service.ILoveService;
 import com.simpletiktok.simpletiktok.data.service.IUserService;
 import com.simpletiktok.simpletiktok.data.service.IVideoService;
@@ -56,11 +57,25 @@ public class UserController {
 
     @DeleteMapping("/deleteVideo")
     public ResponseResult<Boolean> deleteVideo(@RequestParam String author, @RequestParam String aweme_id) {
+        if (!hasPermission(author, aweme_id)) {
+            return ResponseResult.failure(403, "用户没有权限删除该视频");
+        }
+
         boolean isRemoved = VideoService.removeById(aweme_id);
         if (isRemoved) {
             return ResponseResult.success(true);
         } else {
-            return ResponseResult.failure(400,"删除视频失败");
+            return ResponseResult.failure(400, "删除视频失败");
         }
     }
+
+    public boolean hasPermission(String author, String aweme_id) {
+        Video video = VideoService.getById(aweme_id);
+        if (video == null) {
+            return false;
+        }
+        // 验证当前用户是否是视频的作者
+        return video.getAuthor().equals(author);
+    }
+
 }

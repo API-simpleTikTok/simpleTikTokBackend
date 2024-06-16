@@ -17,5 +17,7 @@ public interface IVideoService extends IService<Video> {
 
     List<Video> getMyVideo(Integer pageNo, Integer pageSize, String author);
 
-    List<Video> getRecommendedVideo(Integer start, Integer pageSize);
+    List<Video> getRecommendedVideo(Integer start, Integer pageSize, String author);
+
+    List<String> getLikedVideoIdsByAuthor(String author);
 }

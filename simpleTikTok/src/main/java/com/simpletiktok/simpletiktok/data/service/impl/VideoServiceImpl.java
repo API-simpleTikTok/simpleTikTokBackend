@@ -5,6 +5,7 @@ import com.simpletiktok.simpletiktok.data.entity.Video;
 import com.simpletiktok.simpletiktok.data.mapper.VideoMapper;
 import com.simpletiktok.simpletiktok.data.service.IVideoService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +21,9 @@ import java.util.List;
 @Service
 public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements IVideoService {
 
+    @Resource
+    private IVideoService loveService;
+
     @Override
     public List<Video> getMyVideo(Integer pageNo, Integer pageSize, String author) {
         LambdaQueryWrapper<Video> queryWrapper = new LambdaQueryWrapper<>();
@@ -29,14 +33,34 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements
     }
 
     @Override
-    public List<Video> getRecommendedVideo(Integer start, Integer pageSize) {
+    public List<Video> getRecommendedVideo(Integer start, Integer pageSize, String author) {
         Integer pageNo = 0;
         if(start != 0)
             pageNo = start / pageSize;
         else
             pageNo = 1;
+
+
+        List<String> likedVideoIds = loveService.getLikedVideoIdsByAuthor(author);
+
         LambdaQueryWrapper<Video> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.last("limit " + (pageNo - 1) * pageSize + "," + pageSize);
+
+        // 排除用户喜欢过的视频
+        if (!likedVideoIds.isEmpty()) {
+            queryWrapper.notIn(Video::getAwemeId, likedVideoIds);
+        }
+
+        queryWrapper.orderByDesc(Video::getDiggCount);
+        queryWrapper.last("limit " + pageNo * pageSize + "," + pageSize);
         return list(queryWrapper);
+    }
+
+    @Override
+    public List<String> getLikedVideoIdsByAuthor(String author)
+    {
+        LambdaQueryWrapper<Video> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(Video::getAuthor, author);
+        queryWrapper.select(Video::getAwemeId);
+        return listObjs(queryWrapper, o -> (String) o);
     }
 }

@@ -118,8 +118,8 @@ public class VideoController {
     }
 
     @GetMapping("/recommended")
-    public ResponseResult<Map<String, Object>> getRecommendedVideo(@RequestParam Integer start, @RequestParam Integer pageSize) {
-        List<Video> videoList = videoService.getRecommendedVideo(start, pageSize);
+    public ResponseResult<Map<String, Object>> getRecommendedVideo(@RequestParam Integer start, @RequestParam Integer pageSize, @RequestParam String author) {
+        List<Video> videoList = videoService.getRecommendedVideo(start, pageSize, author);
         LambdaQueryWrapper<Video> countQueryWrapper = new LambdaQueryWrapper<>();
         int totalVideos = (int) videoService.count(countQueryWrapper);
         Map<String, Object> videoPage = new HashMap<>();

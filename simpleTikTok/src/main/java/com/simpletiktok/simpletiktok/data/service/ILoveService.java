@@ -11,6 +11,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author ricetea
  * @since 2024-06-06
  */
-public interface ILoveService extends IService<Love> {
+public interface ILoveService extends IService<Love>
+{
 
 }
