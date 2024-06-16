@@ -21,9 +21,6 @@ import java.util.List;
 @Service
 public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements IVideoService {
 
-    @Resource
-    private IVideoService loveService;
-
     @Override
     public List<Video> getMyVideo(Integer pageNo, Integer pageSize, String author) {
         LambdaQueryWrapper<Video> queryWrapper = new LambdaQueryWrapper<>();
@@ -41,7 +38,7 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements
             pageNo = 1;
 
 
-        List<String> likedVideoIds = loveService.getLikedVideoIdsByAuthor(author);
+        List<String> likedVideoIds = getLikedVideoIdsByAuthor(author);
 
         LambdaQueryWrapper<Video> queryWrapper = new LambdaQueryWrapper<>();
 

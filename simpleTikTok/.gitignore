@@ -15,10 +15,11 @@ logs/
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
+./.idea
 *.iws
 *.iml
 *.ipr
+../logs/*
 
 ### NetBeans ###
 /nbproject/private/
