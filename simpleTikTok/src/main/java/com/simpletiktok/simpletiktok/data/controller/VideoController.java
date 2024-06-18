@@ -44,9 +44,8 @@ public class VideoController {
         videoPage.put("pageNo", pageNo);
         videoPage.put("total", totalVideos);
         List<Map<String, Object>> newList = new ArrayList<>();
-        System.out.println(videoList);
         for (Video video : videoList) {
-            avatar = userMapper.selectById(video.getAuthor()).getAvatar();
+            avatar = userMapper.selectById(author).getAvatar();
             Map<String, Object> newVideo = new HashMap<>();
             newVideo.put("aweme_id", video.getAwemeId());
             newVideo.put("desc", video.getDesc());
@@ -67,6 +66,7 @@ public class VideoController {
                         put("width", 720);
                     }}
             );
+            videoDetails.put("aweme_id", video.getAwemeId());
             newVideo.put("video", videoDetails);
 
             Map<String, Object> statistics = new HashMap<>();
@@ -79,13 +79,13 @@ public class VideoController {
             newVideo.put("statistics", statistics);
 
             newVideo.put("is_top", video.getIsTop());
-            newVideo.put("author_user_id", video.getAuthor());
+            newVideo.put("author_user_id", author);
 
             Map<String, Object> author_list = new HashMap<>();
-            author_list.put("aweme_count",userMapper.selectById(video.getAuthor()).getAwemeCount());
-            author_list.put("follower_count",userMapper.selectById(video.getAuthor()).getFollowerCount());
-            author_list.put("following_count",userMapper.selectById(video.getAuthor()).getFollowingCount());
-            author_list.put("nickname",userMapper.selectById(video.getAuthor()).getNickname());
+            author_list.put("aweme_count",userMapper.selectById(author).getAwemeCount());
+            author_list.put("follower_count",userMapper.selectById(author).getFollowerCount());
+            author_list.put("following_count",userMapper.selectById(author).getFollowingCount());
+            author_list.put("nickname",userMapper.selectById(author).getNickname());
             author_list.put("author",author);
             author_list.put("avatar_168x168",
                     new HashMap<String,Object>(){{
