@@ -1,8 +1,11 @@
 package com.simpletiktok.simpletiktok.data.controller;
 
+import com.qiniu.util.Auth;
+import com.qiniu.util.StringMap;
 import com.simpletiktok.simpletiktok.data.entity.Love;
 import com.simpletiktok.simpletiktok.data.entity.User;
 import com.simpletiktok.simpletiktok.data.entity.Video;
+import com.simpletiktok.simpletiktok.data.mapper.UserMapper;
 import com.simpletiktok.simpletiktok.data.service.ILoveService;
 import com.simpletiktok.simpletiktok.data.service.IUserService;
 import com.simpletiktok.simpletiktok.data.service.IVideoService;
@@ -10,7 +13,10 @@ import com.simpletiktok.simpletiktok.vo.ResponseResult;
 import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
+
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -31,6 +37,8 @@ public class UserController {
     private IVideoService VideoService;
     @Resource
     private IUserService UserService;
+    @Autowired
+    private UserMapper userMapper;
 
     @PostMapping("/sign")
     public ResponseResult<Map<String, String>> sign(@RequestBody Map params)
@@ -77,6 +85,29 @@ public class UserController {
         }
         // 验证当前用户是否是视频的作者
         return video.getAuthor().equals(author);
+    }
+
+    @GetMapping("/getUploadToken")
+    public Object getUploadToken(@RequestParam String author) {
+        User user = userMapper.selectById(author);
+        if(user == null) {
+            return new RedirectView("/login"); // 这里假设登录入口的URL为 /login
+        }
+        String accessKey = "RvSSLZzyvWnQoHd6qWRNJpV4E3ti2Ifemsxj6Xvc";
+        String secretKey = "GH2eDLZEJAItCNQqORoqjcfH3jzFqZo8Z_TqPKQm";
+        Auth auth = Auth.create(accessKey, secretKey);
+        String bucket = "simpletiktok";
+        long expireSeconds = 3600;
+        StringMap putPolicy = new StringMap();
+        putPolicy.put("returnBody", "{\"key\":\"$(key)\",\"hash\":\"$(etag)\",\"bucket\":\"$(bucket)\",\"fsize\":$(fsize)}");
+        String upToken = auth.uploadToken(bucket,null,expireSeconds,putPolicy);
+        Map<String, Object> res = new HashMap<>();
+        Map<String,String> tokenMap = new HashMap<>();
+        tokenMap.put("upToken",upToken);
+        res.put("data",tokenMap);
+        res.put("msg","获取成功");
+        return ResponseResult.success(res);
+
     }
 
 }
