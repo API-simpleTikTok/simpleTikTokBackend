@@ -44,7 +44,7 @@ public class VideoController {
         videoPage.put("pageNo", pageNo);
         videoPage.put("total", totalVideos);
         List<Map<String, Object>> newList = new ArrayList<>();
-
+        System.out.println(videoList);
         for (Video video : videoList) {
             avatar = userMapper.selectById(video.getAuthor()).getAvatar();
             Map<String, Object> newVideo = new HashMap<>();
@@ -86,16 +86,15 @@ public class VideoController {
             author_list.put("follower_count",userMapper.selectById(video.getAuthor()).getFollowerCount());
             author_list.put("following_count",userMapper.selectById(video.getAuthor()).getFollowingCount());
             author_list.put("nickname",userMapper.selectById(video.getAuthor()).getNickname());
-            author_list.put("author",userMapper.selectById(video.getAuthor()).getAuthor());
-            Map<String, Object> authorDetails = new HashMap<>();
-            authorDetails.put("avatar_168x168",
+            author_list.put("author",author);
+            author_list.put("avatar_168x168",
                     new HashMap<String,Object>(){{
                         put("url_list", Collections.singletonList(avatar));
                         put("width", 720);
                         put("height", 720);
                     }}
             );
-            authorDetails.put("avatar_300x300",
+            author_list.put("avatar_300x300",
                     new HashMap<String,Object>(){{
                         put("url_list", Collections.singletonList(avatar));
                         put("width", 720);
@@ -103,16 +102,14 @@ public class VideoController {
                     }}
             );
 
-            authorDetails.put("cover_url", List.of(
+            author_list.put("cover_url", List.of(
                     new HashMap<String, Object>() {{
                         put("url_list", Collections.singletonList("http://sen0fbsqd.hb-bkt.clouddn.com/aTnyHICCi-NMudWfVELeO.png"));
                     }}
             ));
-            author_list.put("author", authorDetails);
             newVideo.put("author", author_list);
             newList.add(newVideo);
         }
-
         videoPage.put("list", newList);
         return ResponseResult.success(videoPage);
     }
