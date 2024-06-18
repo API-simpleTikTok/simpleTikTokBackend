@@ -36,8 +36,8 @@ public class SessionServiceImpl implements ISessionService
     @Override
     public Map<String, String> loginSession(String author, String password)
     {
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(author, password);
-        Authentication authenticate = authenticationManager.authenticate(authenticationToken);
+//        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(author, password);
+//        Authentication authenticate = authenticationManager.authenticate(authenticationToken);
 
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("author", author);

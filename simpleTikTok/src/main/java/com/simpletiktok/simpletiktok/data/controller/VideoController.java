@@ -55,14 +55,14 @@ public class VideoController {
             Map<String, Object> videoDetails = new HashMap<>();
             videoDetails.put("play_addr",
                     new HashMap<String, Object>() {{
-                        put("url_list", Collections.singletonList("AiIEMkIA7Cb3s5c4e7e6g.png"));
+                        put("url_list", Collections.singletonList(video.getUrl()));
                         put("height", 1920);
                         put("width", 1080);
                     }}
             );
             videoDetails.put("cover",
                     new HashMap<String, Object>() {{
-                        put("url_list", Collections.singletonList("AiIEMkIA7Cb3s5c4e7e6g.png"));
+                        put("url_list", video.getCover());
                         put("height", 720);
                         put("width", 720);
                     }}

@@ -25,7 +25,7 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements
     public List<Video> getMyVideo(Integer pageNo, Integer pageSize, String author) {
         LambdaQueryWrapper<Video> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(Video::getAuthor, author);
-        queryWrapper.last("limit " + (pageNo - 1) * pageSize + "," + pageSize);
+        queryWrapper.last("limit " + pageNo * pageSize + "," + pageSize);
         return list(queryWrapper);
     }
 
