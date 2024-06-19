@@ -5,10 +5,12 @@ import com.qiniu.util.StringMap;
 import com.simpletiktok.simpletiktok.data.entity.Love;
 import com.simpletiktok.simpletiktok.data.entity.User;
 import com.simpletiktok.simpletiktok.data.entity.Video;
+import com.simpletiktok.simpletiktok.data.mapper.LoveMapper;
 import com.simpletiktok.simpletiktok.data.mapper.UserMapper;
 import com.simpletiktok.simpletiktok.data.service.ILoveService;
 import com.simpletiktok.simpletiktok.data.service.IUserService;
 import com.simpletiktok.simpletiktok.data.service.IVideoService;
+import com.simpletiktok.simpletiktok.data.service.impl.LoveServiceImpl;
 import com.simpletiktok.simpletiktok.vo.ResponseResult;
 import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,13 +36,17 @@ import java.util.Map;
 @RequestMapping("/user")
 public class UserController {
     @Resource
-    private ILoveService LoveService;
+    private ILoveService loveService;
     @Resource
     private IVideoService VideoService;
     @Resource
     private IUserService UserService;
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private LoveMapper loveMapper;
+    @Autowired
+    private LoveServiceImpl loveServiceImpl;
 
     @PostMapping("/sign")
     public ResponseResult<Map<String, String>> sign(@RequestBody Map params)
@@ -53,16 +59,33 @@ public class UserController {
     }
 
     @PostMapping("/diggVideo")
-    public ResponseResult<Boolean> diggVideo(@RequestBody Map params) {
+    public ResponseResult<Object> diggVideo(@RequestBody Map params) {
         Love love = new Love();
         love.setAuthor((String) params.get("author"));
         love.setAwemeId((String) params.get("aweme_id"));
         love.setIsloved(String.valueOf(params.get("isLoved")));
-        boolean isSaved = LoveService.save(love);
-        if (isSaved) {
-            return ResponseResult.success(true);
-        } else {
-            return ResponseResult.failure(400, "点赞失败");
+        List<Love> loveList  = loveService.getLoveByAuthor(love.getAuthor(),love.getAwemeId());
+        Map<String, Object> res = new HashMap<>();
+        if(!loveList.isEmpty()){
+            boolean isUpdate = loveService.updateLoveStatus(love.getAuthor(),love.getIsloved(),love.getAwemeId());
+            if(!isUpdate){
+                res.put("code",400);
+                res.put("msg","更新失败");
+            }else{
+                res.put("code",200);
+                res.put("msg","更新成功");
+            }
+            return ResponseResult.success(res);
+        }else {
+            boolean isSaved = loveService.save(love);
+            if (isSaved) {
+                res.put("code",200);
+                res.put("msg","更新成功");
+            } else {
+                res.put("code",400);
+                res.put("msg","更新失败");
+            }
+            return ResponseResult.success(res);
         }
     }
 

@@ -30,3 +30,7 @@ jwt:
   issuer: springboot3-security
   header: Authorization
   tokenHead: Bearer
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
