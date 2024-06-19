@@ -30,7 +30,7 @@ public class LoveServiceImpl extends ServiceImpl<LoveMapper, Love> implements IL
     @Override
     public boolean updateLoveStatus(String author, String newStatus, String aweme_id) {
         LambdaUpdateWrapper<Love> updateWrapper = new LambdaUpdateWrapper<>();
-        updateWrapper.eq(Love::getAuthor, author).set(Love::getAwemeId, aweme_id) // 设置更新条件
+        updateWrapper.eq(Love::getAuthor, author).eq(Love::getAwemeId, aweme_id) // 设置更新条件
                 .set(Love::getIsloved, newStatus); // 设置更新的字段和值
 
         return update(updateWrapper); // 执行更新操作

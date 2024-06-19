@@ -2,6 +2,7 @@ package com.simpletiktok.simpletiktok.data.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,6 +35,7 @@ public class Video implements Serializable {
 
     private String title;
 
+    @NotNull
     private String author;
 
     private Integer diggCount;

@@ -1,0 +1,7 @@
+package com.simpletiktok.simpletiktok.utils;
+
+public class ValidationGroups {
+    public interface BasicValidation {}
+    public interface VideoValidation {}
+}
+
