@@ -1,6 +1,7 @@
 package com.simpletiktok.simpletiktok.data.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.simpletiktok.simpletiktok.data.entity.Love;
 import com.simpletiktok.simpletiktok.data.entity.Video;
 import com.simpletiktok.simpletiktok.data.mapper.VideoMapper;
 import com.simpletiktok.simpletiktok.data.service.IVideoService;
@@ -59,5 +60,15 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements
         queryWrapper.eq(Video::getAuthor, author);
         queryWrapper.select(Video::getAwemeId);
         return listObjs(queryWrapper, o -> (String) o);
+    }
+
+    @Override
+    public List<Video>getMyLikedVideos(Integer pageNo, Integer pageSize,String author) {
+        LambdaQueryWrapper<Love> queryWrapper = new LambdaQueryWrapper<>();
+        LambdaQueryWrapper<Video> queryWrapper1 = new LambdaQueryWrapper<>();
+        queryWrapper.eq(Love::getAuthor, author).eq(Love::getIsloved, "true");
+        queryWrapper1.in(Video::getAwemeId, queryWrapper.select(Love::getAwemeId));
+        queryWrapper.last("limit " + pageNo * pageSize + "," + pageSize);
+        return list(queryWrapper1);
     }
 }

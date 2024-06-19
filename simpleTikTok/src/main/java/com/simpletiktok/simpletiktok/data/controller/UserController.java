@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -108,6 +110,46 @@ public class UserController {
         res.put("msg","获取成功");
         return ResponseResult.success(res);
 
+    }
+
+    @GetMapping("/panel")
+    public ResponseResult<Map<String, Object>> panel(@RequestParam String author) {
+        User user = userMapper.selectById(author);
+        if(user == null) {
+            return ResponseResult.failure(403,"未找到用户数据");
+        }
+        String avatar = user.getAvatar();
+        Map<String, Object> author_list = new HashMap<>();
+        author_list.put("aweme_count",userMapper.selectById(author).getAwemeCount());
+        author_list.put("follower_count",userMapper.selectById(author).getFollowerCount());
+        author_list.put("following_count",userMapper.selectById(author).getFollowingCount());
+        author_list.put("nickname",userMapper.selectById(author).getNickname());
+        author_list.put("author",author);
+        author_list.put("avatar_168x168",
+                new HashMap<String,Object>(){{
+                    put("url_list", Collections.singletonList(avatar));
+                    put("width", 720);
+                    put("height", 720);
+                }}
+        );
+        author_list.put("avatar_300x300",
+                new HashMap<String,Object>(){{
+                    put("url_list", Collections.singletonList(avatar));
+                    put("width", 720);
+                    put("height", 720);
+                }}
+        );
+
+        author_list.put("cover_url", List.of(
+                new HashMap<String, Object>() {{
+                    put("url_list", Collections.singletonList("http://sen0fbsqd.hb-bkt.clouddn.com/aTnyHICCi-NMudWfVELeO.png"));
+                }}
+        ));
+        author_list.put("signature", user.getSignature());
+        author_list.put("user_age", user.getUserAge());
+        author_list.put("gender", user.getGender());
+        author_list.put("unique_id", user.getAuthor());
+        return ResponseResult.success(author_list);
     }
 
 }

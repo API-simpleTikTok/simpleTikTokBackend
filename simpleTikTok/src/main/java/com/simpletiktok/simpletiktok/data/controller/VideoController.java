@@ -166,4 +166,82 @@ public class VideoController {
         videoPage.put("list", newList);
         return ResponseResult.success(videoPage);
     }
+
+    @GetMapping("/like")
+    public ResponseResult<Map<String, Object>> getLikeVideo(@RequestParam Integer pageNo, @RequestParam Integer pageSize, @RequestParam String author) {
+        List<Video> videoList = videoService.getMyLikedVideos(pageNo, pageSize, author);
+        int totalVideos = videoList.size();
+        Map<String, Object> videoPage = new HashMap<>();
+        videoPage.put("pageNo", pageNo);
+        videoPage.put("total", totalVideos);
+        List<Map<String, Object>> newList = new ArrayList<>();
+        for (Video video : videoList) {
+            avatar = userMapper.selectById(author).getAvatar();
+            Map<String, Object> newVideo = new HashMap<>();
+            newVideo.put("aweme_id", video.getAwemeId());
+            newVideo.put("desc", video.getDesc());
+            newVideo.put("create_time", video.getCreateTime());
+
+            Map<String, Object> videoDetails = new HashMap<>();
+            videoDetails.put("play_addr",
+                    new HashMap<String, Object>() {{
+                        put("url_list", Collections.singletonList(video.getUrl()));
+                        put("height", 1920);
+                        put("width", 1080);
+                    }}
+            );
+            videoDetails.put("cover",
+                    new HashMap<String, Object>() {{
+                        put("url_list", video.getCover());
+                        put("height", 720);
+                        put("width", 720);
+                    }}
+            );
+            videoDetails.put("aweme_id", video.getAwemeId());
+            newVideo.put("video", videoDetails);
+
+            Map<String, Object> statistics = new HashMap<>();
+            statistics.put("admire_count", 0);
+            statistics.put("comment_count", video.getCommentCount());
+            statistics.put("digg_count", video.getDiggCount());
+            statistics.put("collect_count", video.getCollectCount());
+            statistics.put("play_count", 0);
+            statistics.put("share_count", video.getShareCount());
+            newVideo.put("statistics", statistics);
+
+            newVideo.put("is_top", video.getIsTop());
+            newVideo.put("author_user_id", author);
+
+            Map<String, Object> author_list = new HashMap<>();
+            author_list.put("aweme_count",userMapper.selectById(author).getAwemeCount());
+            author_list.put("follower_count",userMapper.selectById(author).getFollowerCount());
+            author_list.put("following_count",userMapper.selectById(author).getFollowingCount());
+            author_list.put("nickname",userMapper.selectById(author).getNickname());
+            author_list.put("author",author);
+            author_list.put("avatar_168x168",
+                    new HashMap<String,Object>(){{
+                        put("url_list", Collections.singletonList(avatar));
+                        put("width", 720);
+                        put("height", 720);
+                    }}
+            );
+            author_list.put("avatar_300x300",
+                    new HashMap<String,Object>(){{
+                        put("url_list", Collections.singletonList(avatar));
+                        put("width", 720);
+                        put("height", 720);
+                    }}
+            );
+
+            author_list.put("cover_url", List.of(
+                    new HashMap<String, Object>() {{
+                        put("url_list", Collections.singletonList("http://sen0fbsqd.hb-bkt.clouddn.com/aTnyHICCi-NMudWfVELeO.png"));
+                    }}
+            ));
+            newVideo.put("author", author_list);
+            newList.add(newVideo);
+        }
+        videoPage.put("list", newList);
+        return ResponseResult.success(videoPage);
+    }
 }
