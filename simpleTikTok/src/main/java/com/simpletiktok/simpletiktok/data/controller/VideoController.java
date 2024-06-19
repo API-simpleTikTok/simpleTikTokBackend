@@ -7,11 +7,9 @@ import com.simpletiktok.simpletiktok.data.service.IVideoService;
 import com.simpletiktok.simpletiktok.vo.ResponseResult;
 import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import java.util.UUID;
 import java.util.*;
 
 
@@ -243,5 +241,19 @@ public class VideoController {
         }
         videoPage.put("list", newList);
         return ResponseResult.success(videoPage);
+    }
+
+    @PostMapping("/upload")
+    public ResponseResult<Map<String, String>> uploadVideo(@RequestBody Video video) {
+        UUID uuid = UUID.randomUUID();
+        video.setAwemeId(uuid.toString());
+        boolean success = videoService.save(video);
+        Map<String, String> res = new HashMap<>();
+        if(success){
+            res.put("msg","成功");
+            return ResponseResult.success(res);
+        }else{
+            return ResponseResult.failure(402,"上传失败");
+        }
     }
 }
