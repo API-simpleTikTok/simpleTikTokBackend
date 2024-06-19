@@ -1,12 +1,16 @@
 package com.simpletiktok.simpletiktok.data.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.simpletiktok.simpletiktok.data.entity.QueryVideo;
 import com.simpletiktok.simpletiktok.data.entity.Video;
 import com.simpletiktok.simpletiktok.data.mapper.UserMapper;
 import com.simpletiktok.simpletiktok.data.service.IVideoService;
+import com.simpletiktok.simpletiktok.utils.ValidationGroups;
 import com.simpletiktok.simpletiktok.vo.ResponseResult;
 import jakarta.annotation.Resource;
+import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import java.util.UUID;
@@ -244,9 +248,16 @@ public class VideoController {
     }
 
     @PostMapping("/upload")
-    public ResponseResult<Map<String, String>> uploadVideo(@RequestBody Video video) {
+    public ResponseResult<Map<String, String>> uploadVideo(@RequestBody @Validated(ValidationGroups.BasicValidation.class) QueryVideo queryVideo) {
         UUID uuid = UUID.randomUUID();
-        video.setAwemeId(uuid.toString());
+        queryVideo.setAwemeId(uuid.toString());
+        Video video = new Video();
+        try {
+            BeanUtils.copyProperties(video, queryVideo);
+        } catch (Exception e) {
+            System.out.println(e.toString());  // 处理可能的异常
+        }
+
         boolean success = videoService.save(video);
         Map<String, String> res = new HashMap<>();
         if(success){
