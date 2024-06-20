@@ -13,6 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 import java.util.*;
 
@@ -51,7 +56,7 @@ public class VideoController {
             Map<String, Object> newVideo = new HashMap<>();
             newVideo.put("aweme_id", video.getAwemeId());
             newVideo.put("desc", video.getDesc());
-            newVideo.put("create_time", video.getCreateTime());
+            newVideo.put("create_time", video.getCreateTime().toEpochSecond(ZoneOffset.UTC));
 
             Map<String, Object> videoDetails = new HashMap<>();
             videoDetails.put("play_addr",
@@ -182,7 +187,7 @@ public class VideoController {
             Map<String, Object> newVideo = new HashMap<>();
             newVideo.put("aweme_id", video.getAwemeId());
             newVideo.put("desc", video.getDesc());
-            newVideo.put("create_time", video.getCreateTime());
+            newVideo.put("create_time", video.getCreateTime().toEpochSecond(ZoneOffset.UTC));
 
             Map<String, Object> videoDetails = new HashMap<>();
             videoDetails.put("play_addr",
@@ -254,6 +259,10 @@ public class VideoController {
         Video video = new Video();
         try {
             BeanUtils.copyProperties(video, queryVideo);
+            video.setDiggCount(0);
+            video.setShareCount(0);
+            video.setCollectCount(0);
+            video.setCommentCount(0);
         } catch (Exception e) {
             System.out.println(e.toString());  // 处理可能的异常
         }

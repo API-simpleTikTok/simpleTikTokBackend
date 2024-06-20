@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
-import java.time.ZoneOffset;
 /**
  * <p>
  *
@@ -113,8 +112,9 @@ public class Video implements Serializable {
     public void setDesc(String desc) {
         this.desc = desc;
     }
-    public long getCreateTime() {
-        return createTime.toEpochSecond(ZoneOffset.UTC);
+    public LocalDateTime getCreateTime() {
+//        return createTime.toEpochSecond(ZoneOffset.UTC);
+        return createTime;
     }
 
     public void setCreateTime(LocalDateTime createTime) {
