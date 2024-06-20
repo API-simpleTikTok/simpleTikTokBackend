@@ -129,25 +129,25 @@ public class VideoController {
     public ResponseResult<Map<String, Object>> getRecommendedVideo(@ModelAttribute @Validated(ValidationGroups.RecommendedValidation.class) QueryVideo queryVideo) {
         LambdaQueryWrapper<Video> countQueryWrapper = new LambdaQueryWrapper<>();
         int totalVideos = (int) videoService.count(countQueryWrapper);
-        List<Video> recommendations = videoService.getRecommendedVideo(queryVideo.getStart(), queryVideo.getPageSize(), queryVideo.getAuthor());
-        List<Video> videoList = new ArrayList<>();
+        List<Video> videoList = videoService.getRecommendedVideo(queryVideo.getStart(), queryVideo.getPageSize(), queryVideo.getAuthor());
+//        List<Video> videoList = new ArrayList<>();
         //使用布隆过滤器来避免重复推荐
-        while(true){
-            for (Video video : recommendations){
-                if (!bloomFilterService.mightContain(video.getAwemeId()+queryVideo.getAuthor())) {
-                    videoList.add(video);
-                    bloomFilterService.add(video.getAwemeId()+queryVideo.getAuthor());
-                }
-            }
-            if(videoList.size() == queryVideo.getPageSize()){
-                break;
-            }else if(queryVideo.getStart() < totalVideos){
-                queryVideo.setStart(queryVideo.getStart()+queryVideo.getPageSize());
-                recommendations = videoService.getRecommendedVideo(queryVideo.getStart(), queryVideo.getPageSize()-videoList.size(), queryVideo.getAuthor());
-            }else{
-                break;
-            }
-        }
+//        while(true){
+//            for (Video video : recommendations){
+//                if (!bloomFilterService.mightContain(video.getAwemeId()+queryVideo.getAuthor())) {
+//                    videoList.add(video);
+//                    bloomFilterService.add(video.getAwemeId()+queryVideo.getAuthor());
+//                }
+//            }
+//            if(videoList.size() == queryVideo.getPageSize()){
+//                break;
+//            }else if(queryVideo.getStart() < totalVideos){
+//                queryVideo.setStart(queryVideo.getStart()+queryVideo.getPageSize());
+//                recommendations = videoService.getRecommendedVideo(queryVideo.getStart(), queryVideo.getPageSize()-videoList.size(), queryVideo.getAuthor());
+//            }else{
+//                break;
+//            }
+//        }
         Map<String, Object> videoPage = new HashMap<>();
         videoPage.put("total", totalVideos);
         List<Map<String,Object>> newList =new ArrayList<>();
