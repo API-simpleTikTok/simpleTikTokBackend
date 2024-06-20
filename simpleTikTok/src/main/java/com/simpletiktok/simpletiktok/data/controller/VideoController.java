@@ -1,8 +1,10 @@
 package com.simpletiktok.simpletiktok.data.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.simpletiktok.simpletiktok.data.entity.Love;
 import com.simpletiktok.simpletiktok.data.entity.QueryVideo;
 import com.simpletiktok.simpletiktok.data.entity.Video;
+import com.simpletiktok.simpletiktok.data.mapper.LoveMapper;
 import com.simpletiktok.simpletiktok.data.mapper.UserMapper;
 import com.simpletiktok.simpletiktok.data.service.BloomFilterService;
 import com.simpletiktok.simpletiktok.data.service.IVideoService;
@@ -13,12 +15,7 @@ import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.time.ZoneOffset;
-import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 import java.util.*;
 
@@ -42,6 +39,9 @@ public class VideoController {
 
     @Autowired
     private BloomFilterService bloomFilterService;
+
+    @Autowired
+    private LoveMapper loveMapper;
 
     private String avatar;
 
@@ -189,7 +189,10 @@ public class VideoController {
                     }}
             ));
             newVideo.put("author", authors);
-
+            Love love = loveMapper.selectByAwemeIdAndAuthor(video.getAwemeId(),queryVideo.getAuthor());
+            System.out.println(love);
+            boolean isLoved = love != null && Boolean.parseBoolean(love.getIsloved());
+            newVideo.put("isLoved", isLoved);
             newList.add(newVideo);
         }
         videoPage.put("list", newList);

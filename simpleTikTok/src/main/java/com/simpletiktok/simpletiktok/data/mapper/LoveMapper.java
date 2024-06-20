@@ -27,4 +27,7 @@ public interface LoveMapper extends BaseMapper<Love> {
 
     @Select("SELECT l.* FROM love l where l.author = #{author} AND l.aweme_id = #{aweme_id}")
     List<Love> getMyLikedVideosByAuthor(String author, String aweme_id);
+
+    @Select("SELECT * FROM love WHERE aweme_id = #{awemeId} AND author = #{author}")
+    Love selectByAwemeIdAndAuthor(String awemeId, String author);
 }
