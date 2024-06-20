@@ -22,4 +22,5 @@ public interface IVideoService extends IService<Video> {
     List<String> getLikedVideoIdsByAuthor(String author);
 
     List<Video> getMyLikedVideos(Integer pageNo, Integer pageSize,String author);
+    Integer getCountVideo();
 }

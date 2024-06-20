@@ -74,4 +74,9 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements
         int offset = pageNo * pageSize;
         return loveMapper.getMyLikedVideos(author, offset, pageSize);
     }
+
+    @Override
+    public Integer getCountVideo(){
+        return 0;
+    }
 }

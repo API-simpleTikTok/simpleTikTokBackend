@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.simpletiktok.simpletiktok.data.entity.QueryVideo;
 import com.simpletiktok.simpletiktok.data.entity.Video;
 import com.simpletiktok.simpletiktok.data.mapper.UserMapper;
+import com.simpletiktok.simpletiktok.data.service.BloomFilterService;
 import com.simpletiktok.simpletiktok.data.service.IVideoService;
 import com.simpletiktok.simpletiktok.utils.ValidationGroups;
 import com.simpletiktok.simpletiktok.vo.ResponseResult;
@@ -38,6 +39,9 @@ public class VideoController {
 
     @Resource
     private UserMapper userMapper;
+
+    @Autowired
+    private BloomFilterService bloomFilterService;
 
     private String avatar;
 
@@ -122,8 +126,25 @@ public class VideoController {
     }
 
     @GetMapping("/recommended")
-    public ResponseResult<Map<String, Object>> getRecommendedVideo(@RequestParam Integer start, @RequestParam Integer pageSize, @RequestParam String author) {
-        List<Video> videoList = videoService.getRecommendedVideo(start, pageSize, author);
+    public ResponseResult<Map<String, Object>> getRecommendedVideo(@ModelAttribute @Validated(ValidationGroups.RecommendedValidation.class) QueryVideo queryVideo) {
+        List<Video> recommendations = videoService.getRecommendedVideo(queryVideo.getStart(), queryVideo.getPageSize(), queryVideo.getAuthor());
+        List<Video> videoList = new ArrayList<>();
+        //使用布隆过滤器来避免重复推荐
+        while(true){
+            for (Video video : recommendations){
+                if (!bloomFilterService.mightContain(video.getAwemeId()+queryVideo.getAuthor())) {
+                    videoList.add(video);
+                    bloomFilterService.add(video.getAwemeId()+queryVideo.getAuthor());
+                }
+            }
+            if(videoList.size() == queryVideo.getPageSize()){
+                break;
+            }else{
+                queryVideo.setPageSize(queryVideo.getPageSize()+1);
+                recommendations = videoService.getRecommendedVideo(queryVideo.getStart()+1, queryVideo.getPageSize()-videoList.size(), queryVideo.getAuthor());
+            }
+        }
+
         LambdaQueryWrapper<Video> countQueryWrapper = new LambdaQueryWrapper<>();
         int totalVideos = (int) videoService.count(countQueryWrapper);
         Map<String, Object> videoPage = new HashMap<>();

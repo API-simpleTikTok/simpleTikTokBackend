@@ -52,13 +52,12 @@ public class QueryVideo {
     @Min(value = 0, message = "pageNo最小为0", groups = {ValidationGroups.VideoValidation.class, ValidationGroups.RecommendedValidation.class})
     private Integer pageSize;
 
-    @NotNull(message = "pageNo不为空", groups = {ValidationGroups.VideoValidation.class, ValidationGroups.RecommendedValidation.class})
-    @Min(value = 0, message = "pageNo最小为0", groups = {ValidationGroups.VideoValidation.class, ValidationGroups.RecommendedValidation.class})
+    @NotNull(message = "pageNo不为空", groups = {ValidationGroups.VideoValidation.class})
+    @Min(value = 0, message = "pageNo最小为0", groups = {ValidationGroups.VideoValidation.class})
     private Integer size;
 
-    public LocalDateTime getCreateTime() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        return LocalDateTime.parse(this.createTime, formatter);
-    }
+    @NotNull(message = "start不为空", groups = {ValidationGroups.RecommendedValidation.class})
+    @Min(value = 0, message = "start最小为0", groups = {ValidationGroups.RecommendedValidation.class})
+    private Integer start;
 
 }
