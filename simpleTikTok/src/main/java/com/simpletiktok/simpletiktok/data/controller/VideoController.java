@@ -119,6 +119,9 @@ public class VideoController {
                     }}
             ));
             newVideo.put("author", author_list);
+            Love love = loveMapper.selectByAwemeIdAndAuthor(video.getAwemeId(),author);
+            boolean isLoved = love != null && Boolean.parseBoolean(love.getIsloved());
+            newVideo.put("isLoved", isLoved);
             newList.add(newVideo);
         }
         videoPage.put("list", newList);
@@ -190,7 +193,6 @@ public class VideoController {
             ));
             newVideo.put("author", authors);
             Love love = loveMapper.selectByAwemeIdAndAuthor(video.getAwemeId(),queryVideo.getAuthor());
-            System.out.println(love);
             boolean isLoved = love != null && Boolean.parseBoolean(love.getIsloved());
             newVideo.put("isLoved", isLoved);
             newList.add(newVideo);
@@ -271,6 +273,9 @@ public class VideoController {
                     }}
             ));
             newVideo.put("author", author_list);
+            Love love = loveMapper.selectByAwemeIdAndAuthor(video.getAwemeId(),author);
+            boolean isLoved = love != null && Boolean.parseBoolean(love.getIsloved());
+            newVideo.put("isLoved", isLoved);
             newList.add(newVideo);
         }
         videoPage.put("list", newList);
