@@ -19,8 +19,8 @@ public class BloomFilterService {
 
     @PostConstruct
     public void init() {
-        // 初始化布隆过滤器，假设预估插入量为100000，误判率为0.01
-        bloomFilter = BloomFilter.create(Funnels.stringFunnel(StandardCharsets.UTF_8), 100000, 0.01);
+        // 初始化布隆过滤器，假设预估插入量为100000，误判率为0.001
+        bloomFilter = BloomFilter.create(Funnels.stringFunnel(StandardCharsets.UTF_8), 100000, 0.001);
 
         // 从Redis中加载已有数据到布隆过滤器
         loadBloomFilterFromRedis();

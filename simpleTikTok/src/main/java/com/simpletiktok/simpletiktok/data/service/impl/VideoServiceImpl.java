@@ -1,6 +1,7 @@
 package com.simpletiktok.simpletiktok.data.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.simpletiktok.simpletiktok.data.entity.Love;
 import com.simpletiktok.simpletiktok.data.entity.Video;
 import com.simpletiktok.simpletiktok.data.mapper.LoveMapper;
@@ -8,6 +9,7 @@ import com.simpletiktok.simpletiktok.data.mapper.VideoMapper;
 import com.simpletiktok.simpletiktok.data.service.IVideoService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import jakarta.annotation.Resource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,6 +26,8 @@ import java.util.List;
 public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements IVideoService {
 
     private final LoveMapper loveMapper;
+    @Autowired
+    private VideoMapper videoMapper;
 
     public VideoServiceImpl(LoveMapper loveMapper) {
         this.loveMapper = loveMapper;
@@ -39,11 +43,9 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements
 
     @Override
     public List<Video> getRecommendedVideo(Integer start, Integer pageSize, String author) {
-        Integer pageNo = 0;
+        int pageNo = 0;
         if(start != 0)
-            pageNo = start / pageSize;
-        else
-            pageNo = 1;
+            pageNo = start / pageSize + 1;
 
 
         List<String> likedVideoIds = getLikedVideoIdsByAuthor(author);
@@ -55,9 +57,11 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements
             queryWrapper.notIn(Video::getAwemeId, likedVideoIds);
         }
 
+
         queryWrapper.orderByDesc(Video::getDiggCount);
-        queryWrapper.last("limit " + pageNo * pageSize + "," + pageSize);
-        return list(queryWrapper);
+        Page<Video> page = new Page<>(pageNo, pageSize);  // 创建分页对象，页码和页面大小
+
+        return videoMapper.selectPage(page, queryWrapper).getRecords();
     }
 
     @Override
@@ -73,10 +77,5 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements
     public List<Video>getMyLikedVideos(Integer pageNo, Integer pageSize,String author) {
         int offset = pageNo * pageSize;
         return loveMapper.getMyLikedVideos(author, offset, pageSize);
-    }
-
-    @Override
-    public Integer getCountVideo(){
-        return 0;
     }
 }

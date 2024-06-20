@@ -127,6 +127,8 @@ public class VideoController {
 
     @GetMapping("/recommended")
     public ResponseResult<Map<String, Object>> getRecommendedVideo(@ModelAttribute @Validated(ValidationGroups.RecommendedValidation.class) QueryVideo queryVideo) {
+        LambdaQueryWrapper<Video> countQueryWrapper = new LambdaQueryWrapper<>();
+        int totalVideos = (int) videoService.count(countQueryWrapper);
         List<Video> recommendations = videoService.getRecommendedVideo(queryVideo.getStart(), queryVideo.getPageSize(), queryVideo.getAuthor());
         List<Video> videoList = new ArrayList<>();
         //使用布隆过滤器来避免重复推荐
@@ -139,14 +141,13 @@ public class VideoController {
             }
             if(videoList.size() == queryVideo.getPageSize()){
                 break;
+            }else if(queryVideo.getStart() < totalVideos){
+                queryVideo.setStart(queryVideo.getStart()+queryVideo.getPageSize());
+                recommendations = videoService.getRecommendedVideo(queryVideo.getStart(), queryVideo.getPageSize()-videoList.size(), queryVideo.getAuthor());
             }else{
-                queryVideo.setPageSize(queryVideo.getPageSize()+1);
-                recommendations = videoService.getRecommendedVideo(queryVideo.getStart()+1, queryVideo.getPageSize()-videoList.size(), queryVideo.getAuthor());
+                break;
             }
         }
-
-        LambdaQueryWrapper<Video> countQueryWrapper = new LambdaQueryWrapper<>();
-        int totalVideos = (int) videoService.count(countQueryWrapper);
         Map<String, Object> videoPage = new HashMap<>();
         videoPage.put("total", totalVideos);
         List<Map<String,Object>> newList =new ArrayList<>();
