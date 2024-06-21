@@ -130,7 +130,7 @@ public class JwtUtils {
             String subject = getSubject(token);
             token = getTokenContent(token);
             QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-            queryWrapper.eq("username", subject);
+            queryWrapper.eq("author", subject);
             UserMapper userMapper = ContextUtils.getApplicationContext().getBean(UserMapper.class);
             User user = userMapper.selectOne(queryWrapper);
             DecodedJWT jwt = JWT.decode(token);

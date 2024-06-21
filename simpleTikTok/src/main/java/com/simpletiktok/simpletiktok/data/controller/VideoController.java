@@ -11,8 +11,13 @@ import com.simpletiktok.simpletiktok.data.service.IVideoService;
 import com.simpletiktok.simpletiktok.utils.ValidationGroups;
 import com.simpletiktok.simpletiktok.vo.ResponseResult;
 import jakarta.annotation.Resource;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
 import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import java.time.ZoneOffset;
@@ -45,8 +50,11 @@ public class VideoController {
 
     private String avatar;
 
-    @GetMapping("/my")
-    public ResponseResult<Map<String, Object>> getMyVideo(@RequestParam Integer pageNo, @RequestParam Integer pageSize, @RequestParam String author) {
+    public ResponseResult<Map<String, Object>> getMyVideo(
+            @RequestParam @NotNull(message = "pageNo 不能为空") Integer pageNo,
+            @RequestParam @NotNull(message = "pageSize 不能为空") Integer pageSize,
+            @RequestParam @NotEmpty(message = "author 不能为空") String author)
+    {
         List<Video> videoList = videoService.getMyVideo(pageNo, pageSize, author);
         LambdaQueryWrapper<Video> countQueryWrapper = new LambdaQueryWrapper<>();
         countQueryWrapper.eq(Video::getAuthor, author);
@@ -129,28 +137,18 @@ public class VideoController {
     }
 
     @GetMapping("/recommended")
-    public ResponseResult<Map<String, Object>> getRecommendedVideo(@ModelAttribute @Validated(ValidationGroups.RecommendedValidation.class) QueryVideo queryVideo) {
+    public ResponseResult<Map<String, Object>> getRecommendedVideo(
+            @ModelAttribute @Validated(ValidationGroups.RecommendedValidation.class) QueryVideo queryVideo,
+            BindingResult result)
+    {
+        if (result.hasErrors()) {
+            return ResponseResult.failure(400, result.getAllErrors().get(0).getDefaultMessage());
+        }
+
         LambdaQueryWrapper<Video> countQueryWrapper = new LambdaQueryWrapper<>();
         int totalVideos = (int) videoService.count(countQueryWrapper);
         List<Video> videoList = videoService.getRecommendedVideo(queryVideo.getStart(), queryVideo.getPageSize(), queryVideo.getAuthor());
-//        List<Video> videoList = new ArrayList<>();
-        //使用布隆过滤器来避免重复推荐
-//        while(true){
-//            for (Video video : recommendations){
-//                if (!bloomFilterService.mightContain(video.getAwemeId()+queryVideo.getAuthor())) {
-//                    videoList.add(video);
-//                    bloomFilterService.add(video.getAwemeId()+queryVideo.getAuthor());
-//                }
-//            }
-//            if(videoList.size() == queryVideo.getPageSize()){
-//                break;
-//            }else if(queryVideo.getStart() < totalVideos){
-//                queryVideo.setStart(queryVideo.getStart()+queryVideo.getPageSize());
-//                recommendations = videoService.getRecommendedVideo(queryVideo.getStart(), queryVideo.getPageSize()-videoList.size(), queryVideo.getAuthor());
-//            }else{
-//                break;
-//            }
-//        }
+
         Map<String, Object> videoPage = new HashMap<>();
         videoPage.put("total", totalVideos);
         List<Map<String,Object>> newList =new ArrayList<>();
@@ -202,7 +200,10 @@ public class VideoController {
     }
 
     @GetMapping("/like")
-    public ResponseResult<Map<String, Object>> getLikeVideo(@RequestParam Integer pageNo, @RequestParam Integer pageSize, @RequestParam String author) {
+    public ResponseResult<Map<String, Object>> getLikeVideo(
+            @RequestParam @NotNull(message = "pageNo 不能为空") Integer pageNo,
+            @RequestParam @NotNull(message = "pageSize 不能为空") Integer pageSize,
+            @RequestParam @NotEmpty(message = "author 不能为空") String author) {
         List<Video> videoList = videoService.getMyLikedVideos(pageNo, pageSize, author);
         int totalVideos = videoList.size();
         Map<String, Object> videoPage = new HashMap<>();
@@ -283,7 +284,13 @@ public class VideoController {
     }
 
     @PostMapping("/upload")
-    public ResponseResult<Map<String, String>> uploadVideo(@RequestBody @Validated(ValidationGroups.BasicValidation.class) QueryVideo queryVideo) {
+    public ResponseResult<Map<String, String>> uploadVideo(
+            @RequestBody @Validated(ValidationGroups.BasicValidation.class) QueryVideo queryVideo,
+            BindingResult result) {
+        if (result.hasErrors()) {
+            return ResponseResult.failure(400, result.getAllErrors().get(0).getDefaultMessage());
+        }
+
         UUID uuid = UUID.randomUUID();
         queryVideo.setAwemeId(uuid.toString());
         Video video = new Video();
@@ -306,4 +313,7 @@ public class VideoController {
             return ResponseResult.failure(402,"上传失败");
         }
     }
+
 }
+
+

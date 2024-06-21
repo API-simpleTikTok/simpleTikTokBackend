@@ -13,7 +13,13 @@ import com.simpletiktok.simpletiktok.data.service.IVideoService;
 import com.simpletiktok.simpletiktok.data.service.impl.LoveServiceImpl;
 import com.simpletiktok.simpletiktok.vo.ResponseResult;
 import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -49,48 +55,56 @@ public class UserController {
     private LoveServiceImpl loveServiceImpl;
 
     @PostMapping("/sign")
-    public ResponseResult<Map<String, String>> sign(@RequestBody Map params)
-    {
-        String author = (String) params.get("author");
-        String password = (String) params.get("password");
-        String confirmedPassword = (String) params.get("confirmedPassword");
+    public ResponseResult<Map<String, String>> sign(@Valid @RequestBody SignRequest params, BindingResult result) {
+        if (result.hasErrors()) {
+            return ResponseResult.failure(400, result.getAllErrors().get(0).getDefaultMessage());
+        }
+
+        String author = params.getAuthor();
+        String password = params.getPassword();
+        String confirmedPassword = params.getConfirmedPassword();
 
         return ResponseResult.success(UserService.register(author, password, confirmedPassword));
     }
 
     @PostMapping("/diggVideo")
-    public ResponseResult<Object> diggVideo(@RequestBody Map params) {
+    public ResponseResult<Object> diggVideo(@Valid @RequestBody DiggVideoRequest params, BindingResult result) {
+        if (result.hasErrors()) {
+            return ResponseResult.failure(400, result.getAllErrors().get(0).getDefaultMessage());
+        }
+
         Love love = new Love();
-        love.setAuthor((String) params.get("author"));
-        love.setAwemeId((String) params.get("aweme_id"));
-        love.setIsloved(String.valueOf(params.get("isLoved")));
-        List<Love> loveList  = loveService.getLoveByAuthor(love.getAuthor(),love.getAwemeId());
+        love.setAuthor(params.getAuthor());
+        love.setAwemeId(params.getAwemeId());
+        love.setIsloved(String.valueOf(params.getIsLoved()));
+        List<Love> loveList  = loveService.getLoveByAuthor(love.getAuthor(), love.getAwemeId());
         Map<String, Object> res = new HashMap<>();
-        if(!loveList.isEmpty()){
-            boolean isUpdate = loveService.updateLoveStatus(love.getAuthor(),love.getIsloved(),love.getAwemeId());
-            if(!isUpdate){
-                res.put("code",400);
-                res.put("msg","更新失败");
-            }else{
-                res.put("code",200);
-                res.put("msg","更新成功");
+        if (!loveList.isEmpty()) {
+            boolean isUpdate = loveService.updateLoveStatus(love.getAuthor(), love.getIsloved(), love.getAwemeId());
+            if (!isUpdate) {
+                res.put("code", 400);
+                res.put("msg", "更新失败");
+            } else {
+                res.put("code", 200);
+                res.put("msg", "更新成功");
             }
             return ResponseResult.success(res);
-        }else {
+        } else {
             boolean isSaved = loveService.save(love);
             if (isSaved) {
-                res.put("code",200);
-                res.put("msg","更新成功");
+                res.put("code", 200);
+                res.put("msg", "更新成功");
             } else {
-                res.put("code",400);
-                res.put("msg","更新失败");
+                res.put("code", 400);
+                res.put("msg", "更新失败");
             }
             return ResponseResult.success(res);
         }
     }
 
     @DeleteMapping("/deleteVideo")
-    public ResponseResult<Boolean> deleteVideo(@RequestParam String author, @RequestParam String aweme_id) {
+    public ResponseResult<Boolean> deleteVideo(@RequestParam @NotEmpty(message = "author 不能为空") String author,
+                                               @RequestParam @NotEmpty(message = "aweme_id 不能为空") String aweme_id) {
         if (!hasPermission(author, aweme_id)) {
             return ResponseResult.failure(403, "用户没有权限删除该视频");
         }
@@ -113,9 +127,9 @@ public class UserController {
     }
 
     @GetMapping("/getUploadToken")
-    public Object getUploadToken(@RequestParam String author) {
+    public Object getUploadToken(@RequestParam @NotEmpty(message = "author 不能为空") String author) {
         User user = userMapper.selectById(author);
-        if(user == null) {
+        if (user == null) {
             return new RedirectView("/login"); // 这里假设登录入口的URL为 /login
         }
         String accessKey = "RvSSLZzyvWnQoHd6qWRNJpV4E3ti2Ifemsxj6Xvc";
@@ -125,38 +139,38 @@ public class UserController {
         long expireSeconds = 3600;
         StringMap putPolicy = new StringMap();
         putPolicy.put("returnBody", "{\"key\":\"$(key)\",\"hash\":\"$(etag)\",\"bucket\":\"$(bucket)\",\"fsize\":$(fsize)}");
-        String upToken = auth.uploadToken(bucket,null,expireSeconds,putPolicy);
+        String upToken = auth.uploadToken(bucket, null, expireSeconds, putPolicy);
         Map<String, Object> res = new HashMap<>();
-        Map<String,String> tokenMap = new HashMap<>();
-        tokenMap.put("upToken",upToken);
-        res.put("data",tokenMap);
-        res.put("msg","获取成功");
+        Map<String, String> tokenMap = new HashMap<>();
+        tokenMap.put("upToken", upToken);
+        res.put("data", tokenMap);
+        res.put("msg", "获取成功");
         return ResponseResult.success(res);
-
     }
 
+
     @GetMapping("/panel")
-    public ResponseResult<Map<String, Object>> panel(@RequestParam String author) {
+    public ResponseResult<Map<String, Object>> panel(@RequestParam @NotEmpty(message = "author 不能为空") String author) {
         User user = userMapper.selectById(author);
-        if(user == null) {
-            return ResponseResult.failure(403,"未找到用户数据");
+        if (user == null) {
+            return ResponseResult.failure(403, "未找到用户数据");
         }
         String avatar = user.getAvatar();
         Map<String, Object> author_list = new HashMap<>();
-        author_list.put("aweme_count",userMapper.selectById(author).getAwemeCount());
-        author_list.put("follower_count",userMapper.selectById(author).getFollowerCount());
-        author_list.put("following_count",userMapper.selectById(author).getFollowingCount());
-        author_list.put("nickname",userMapper.selectById(author).getNickname());
-        author_list.put("author",author);
+        author_list.put("aweme_count", userMapper.selectById(author).getAwemeCount());
+        author_list.put("follower_count", userMapper.selectById(author).getFollowerCount());
+        author_list.put("following_count", userMapper.selectById(author).getFollowingCount());
+        author_list.put("nickname", userMapper.selectById(author).getNickname());
+        author_list.put("author", author);
         author_list.put("avatar_168x168",
-                new HashMap<String,Object>(){{
+                new HashMap<String, Object>() {{
                     put("url_list", Collections.singletonList(avatar));
                     put("width", 720);
                     put("height", 720);
                 }}
         );
         author_list.put("avatar_300x300",
-                new HashMap<String,Object>(){{
+                new HashMap<String, Object>() {{
                     put("url_list", Collections.singletonList(avatar));
                     put("width", 720);
                     put("height", 720);
@@ -175,4 +189,29 @@ public class UserController {
         return ResponseResult.success(author_list);
     }
 
+    @Getter
+    public static class SignRequest {
+
+        @Setter
+        @NotEmpty(message = "author 不能为空")
+        private String author;
+
+        @NotEmpty(message = "password 不能为空")
+        private String password;
+
+        @NotEmpty(message = "confirmedPassword 不能为空")
+        private String confirmedPassword;
+    }
+
+    @Getter
+    public static class DiggVideoRequest {
+        @NotEmpty(message = "author 不能为空")
+        private String author;
+
+        @NotEmpty(message = "aweme_id 不能为空")
+        private String awemeId;
+
+        @NotNull(message = "isLoved 不能为空")
+        private Boolean isLoved;
+    }
 }
