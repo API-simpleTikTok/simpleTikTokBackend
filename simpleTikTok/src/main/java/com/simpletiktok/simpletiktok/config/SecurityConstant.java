@@ -40,7 +40,7 @@ public class SecurityConstant
     /**
      * 白名单
      */
-    public static final String[] WHITELIST = {"/session", "/user"};
+    public static final String[] WHITELIST = {"/session", "/user/sign"};
 
     @PostConstruct
     public void init()

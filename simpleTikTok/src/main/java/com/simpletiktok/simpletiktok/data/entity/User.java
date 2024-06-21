@@ -71,6 +71,7 @@ public class User implements Serializable {
     private String coverUrl;
 
     private Integer version;
+    private String token;
 
     @Override
     public String toString() {

@@ -35,8 +35,15 @@ public class SessionController
 
         String author = user.getAuthor();
         String password = user.getPassword();
+        String token = sessionService.loginSession(author, password);
+        if(token != null) {
+            Map<String, String> map = new HashMap<>();
+            map.put("token", token);
+            return ResponseResult.success(map);
+        }else{
+            return ResponseResult.failure(401,"账户或密码不正确");
+        }
 
-        return ResponseResult.success(sessionService.loginSession(author, password));
     }
 
     @DeleteMapping("/logout")
