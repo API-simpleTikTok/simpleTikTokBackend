@@ -1,6 +1,8 @@
 package com.simpletiktok.simpletiktok.data.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.simpletiktok.simpletiktok.utils.ValidationGroups;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,10 +29,12 @@ public class User implements Serializable {
      * 抖音号
      */
     @TableId("author")
+    @NotNull(message = "用户账号不能为空", groups = {ValidationGroups.BasicValidation.class, ValidationGroups.UserValidation.class})
     private String author;
 
     private String nickname;
 
+    @NotNull(message = "密码不能为空", groups = {ValidationGroups.UserValidation.class})
     private String password;
 
     private String avatar;
@@ -67,7 +71,7 @@ public class User implements Serializable {
     private String coverUrl;
 
     private Integer version;
-    
+
     @Override
     public String toString() {
         return "User{" +

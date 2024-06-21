@@ -28,7 +28,7 @@ public class SessionController
     ISessionService sessionService;
 
     @PostMapping("")
-    public ResponseResult<Map<String, String>> login(@Valid @RequestBody LoginRequest hashMap, BindingResult result) {
+    public ResponseResult<Map<String, String>> login(@RequestBody LoginRequest hashMap, BindingResult result) {
         if (result.hasErrors()) {
             return ResponseResult.failure(400, result.getAllErrors().get(0).getDefaultMessage());
         }
