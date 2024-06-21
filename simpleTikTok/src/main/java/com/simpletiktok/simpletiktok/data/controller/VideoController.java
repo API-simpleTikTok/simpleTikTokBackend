@@ -136,13 +136,8 @@ public class VideoController {
     }
 
     @GetMapping("/recommended")
-    public ResponseResult<Map<String, Object>> getRecommendedVideo(
-            @ModelAttribute @Validated(ValidationGroups.RecommendedValidation.class) QueryVideo queryVideo,
-            BindingResult result)
+    public ResponseResult<Map<String, Object>> getRecommendedVideo(@ModelAttribute @Validated(ValidationGroups.RecommendedValidation.class) QueryVideo queryVideo)
     {
-        if (result.hasErrors()) {
-            return ResponseResult.failure(400, result.getAllErrors().get(0).getDefaultMessage());
-        }
 
         LambdaQueryWrapper<Video> countQueryWrapper = new LambdaQueryWrapper<>();
         int totalVideos = (int) videoService.count(countQueryWrapper);
