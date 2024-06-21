@@ -48,22 +48,19 @@ public class VideoController {
     private LoveMapper loveMapper;
 
     private String avatar;
-
-    public ResponseResult<Map<String, Object>> getMyVideo(
-            @RequestParam @NotNull(message = "pageNo 不能为空") Integer pageNo,
-            @RequestParam @NotNull(message = "pageSize 不能为空") Integer pageSize,
-            @RequestParam @NotEmpty(message = "author 不能为空") String author)
+    @GetMapping("/my")
+    public ResponseResult<Map<String, Object>> getMyVideo(@ModelAttribute @Validated(ValidationGroups.VideoValidation.class) QueryVideo queryVideo)
     {
-        List<Video> videoList = videoService.getMyVideo(pageNo, pageSize, author);
+        List<Video> videoList = videoService.getMyVideo(queryVideo.getPageNo(), queryVideo.getPageSize(), queryVideo.getAuthor());
         LambdaQueryWrapper<Video> countQueryWrapper = new LambdaQueryWrapper<>();
-        countQueryWrapper.eq(Video::getAuthor, author);
+        countQueryWrapper.eq(Video::getAuthor, queryVideo.getAuthor());
         int totalVideos = (int) videoService.count(countQueryWrapper);
         Map<String, Object> videoPage = new HashMap<>();
-        videoPage.put("pageNo", pageNo);
+        videoPage.put("pageNo", queryVideo.getPageNo());
         videoPage.put("total", totalVideos);
         List<Map<String, Object>> newList = new ArrayList<>();
         for (Video video : videoList) {
-            avatar = userMapper.selectById(author).getAvatar();
+            avatar = userMapper.selectById(queryVideo.getAuthor()).getAvatar();
             Map<String, Object> newVideo = new HashMap<>();
             newVideo.put("aweme_id", video.getAwemeId());
             newVideo.put("desc", video.getDesc());
@@ -97,14 +94,14 @@ public class VideoController {
             newVideo.put("statistics", statistics);
 
             newVideo.put("is_top", video.getIsTop());
-            newVideo.put("author_user_id", author);
+            newVideo.put("author_user_id", queryVideo.getAuthor());
 
             Map<String, Object> author_list = new HashMap<>();
-            author_list.put("aweme_count",userMapper.selectById(author).getAwemeCount());
-            author_list.put("follower_count",userMapper.selectById(author).getFollowerCount());
-            author_list.put("following_count",userMapper.selectById(author).getFollowingCount());
-            author_list.put("nickname",userMapper.selectById(author).getNickname());
-            author_list.put("author",author);
+            author_list.put("aweme_count",userMapper.selectById(queryVideo.getAuthor()).getAwemeCount());
+            author_list.put("follower_count",userMapper.selectById(queryVideo.getAuthor()).getFollowerCount());
+            author_list.put("following_count",userMapper.selectById(queryVideo.getAuthor()).getFollowingCount());
+            author_list.put("nickname",userMapper.selectById(queryVideo.getAuthor()).getNickname());
+            author_list.put("author",queryVideo.getAuthor());
             author_list.put("avatar_168x168",
                     new HashMap<String,Object>(){{
                         put("url_list", Collections.singletonList(avatar));
@@ -126,7 +123,7 @@ public class VideoController {
                     }}
             ));
             newVideo.put("author", author_list);
-            Love love = loveMapper.selectByAwemeIdAndAuthor(video.getAwemeId(),author);
+            Love love = loveMapper.selectByAwemeIdAndAuthor(video.getAwemeId(),queryVideo.getAuthor());
             boolean isLoved = love != null && Boolean.parseBoolean(love.getIsloved());
             newVideo.put("isLoved", isLoved);
             newList.add(newVideo);
@@ -138,7 +135,6 @@ public class VideoController {
     @GetMapping("/recommended")
     public ResponseResult<Map<String, Object>> getRecommendedVideo(@ModelAttribute @Validated(ValidationGroups.RecommendedValidation.class) QueryVideo queryVideo)
     {
-
         LambdaQueryWrapper<Video> countQueryWrapper = new LambdaQueryWrapper<>();
         int totalVideos = (int) videoService.count(countQueryWrapper);
         List<Video> videoList = videoService.getRecommendedVideo(queryVideo.getStart(), queryVideo.getPageSize(), queryVideo.getAuthor());

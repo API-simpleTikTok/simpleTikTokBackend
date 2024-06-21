@@ -52,10 +52,6 @@ public class QueryVideo {
     @Min(value = 0, message = "pageNo最小为0", groups = {ValidationGroups.VideoValidation.class, ValidationGroups.RecommendedValidation.class})
     private Integer pageSize;
 
-    @NotNull(message = "pageNo不为空", groups = {ValidationGroups.VideoValidation.class})
-    @Min(value = 0, message = "pageNo最小为0", groups = {ValidationGroups.VideoValidation.class})
-    private Integer size;
-
     @NotNull(message = "start不为空", groups = {ValidationGroups.RecommendedValidation.class})
     @Min(value = 0, message = "start最小为0", groups = {ValidationGroups.RecommendedValidation.class})
     private Integer start;
