@@ -6,5 +6,6 @@ public class ValidationGroups {
     public interface RecommendedValidation {}
     public interface UserValidation {}
     public interface DeleteValidation {}
+    public interface LoginValidation {}
 }
 
