@@ -274,13 +274,7 @@ public class VideoController {
     }
 
     @PostMapping("/upload")
-    public ResponseResult<Map<String, String>> uploadVideo(
-            @RequestBody @Validated(ValidationGroups.BasicValidation.class) QueryVideo queryVideo,
-            BindingResult result) {
-        if (result.hasErrors()) {
-            return ResponseResult.failure(400, result.getAllErrors().get(0).getDefaultMessage());
-        }
-
+    public ResponseResult<Map<String, String>> uploadVideo(@RequestBody @Validated(ValidationGroups.BasicValidation.class) QueryVideo queryVideo) {
         UUID uuid = UUID.randomUUID();
         queryVideo.setAwemeId(uuid.toString());
         Video video = new Video();

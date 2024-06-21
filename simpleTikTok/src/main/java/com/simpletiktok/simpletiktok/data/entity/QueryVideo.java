@@ -40,8 +40,10 @@ public class QueryVideo {
     @NotNull(message = "url不为空", groups = {ValidationGroups.BasicValidation.class})
     private String url;
 
-    @Min(value = 0, message = "pageSize最小为0", groups = {ValidationGroups.BasicValidation.class})
-    @Max(value = 1, message = "pageSize最大为1", groups = {ValidationGroups.BasicValidation.class})
+
+    @PositiveOrZero(message = "isTop只能是0或1的整数",groups = {ValidationGroups.BasicValidation.class})
+    @Digits(integer=1, fraction=0,message = "isTop只能是0或1的整数",groups = {ValidationGroups.BasicValidation.class})
+    @NotNull(message = "isTop不为空", groups = {ValidationGroups.BasicValidation.class})
     private Integer isTop;
 
     @NotNull(message = "pageNo不为空", groups = {ValidationGroups.VideoValidation.class})
