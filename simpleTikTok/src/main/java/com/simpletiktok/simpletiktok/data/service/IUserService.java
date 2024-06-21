@@ -14,5 +14,5 @@ import java.util.Map;
  * @since 2024-06-06
  */
 public interface IUserService extends IService<User> {
-    Map<String, String> register(String username, String password, String confirmedPassword);
+    Map<String, String> register(String username, String password);
 }

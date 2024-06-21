@@ -35,7 +35,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     private SecurityConstant securityConstant;
 
     @Override
-    public Map<String, String> register(String username, String password, String confirmedPassword)
+    public Map<String, String> register(String username, String password)
     {
         Map<String, String> map = new HashMap<>();
 
@@ -59,24 +59,18 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             return map;
         }
 
-        if (password == null || confirmedPassword == null) {
+        if (password == null ) {
             map.put("error_message", "密码不能为空");
             return map;
         }
 
-        if (password.isEmpty() || confirmedPassword.isEmpty()) {
+        if (password.isEmpty() ) {
             map.put("error_message", "密码不能为空");
         }
 
         if(password.length() > 100)
         {
             map.put("error_message", "密码过长");
-            return map;
-        }
-
-        if(!password.equals(confirmedPassword))
-        {
-            map.put("error_message", "密码不一致");
             return map;
         }
 
@@ -94,9 +88,18 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         //随机生成nickname，格式为“用户”+随机数
         String nickname = "用户" + (int)(Math.random() * 1000);
 
-        User user = new User(username, nickname, encodedPassword,
-                "http://sen0fbsqd.hb-bkt.clouddn.com/1945347711_avatar.jpg", 0, -1, 0, 0, 0,
-                "", 0, "http://sen0fbsqd.hb-bkt.clouddn.com/aTnyHICCi-NMudWfVELeO.png", 0);
+        User user = new User();
+        user.setAuthor(username);
+        user.setNickname(nickname);
+        user.setPassword(encodedPassword);
+        user.setAvatar("http://sen0fbsqd.hb-bkt.clouddn.com/1945347711_avatar.jpg");
+        user.setFollower(0);
+        user.setGender(1);
+        user.setAwemeCount(0);
+        user.setFollowerCount(0);
+        user.setUserAge(19);
+        user.setCoverUrl("http://sen0fbsqd.hb-bkt.clouddn.com/1945347711_avatar.jpg");
+        user.setVersion(0);
 
         userMapper.insert(user);
 

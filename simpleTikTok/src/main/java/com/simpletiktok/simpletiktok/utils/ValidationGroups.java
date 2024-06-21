@@ -5,5 +5,6 @@ public class ValidationGroups {
     public interface VideoValidation {}
     public interface RecommendedValidation {}
     public interface UserValidation {}
+    public interface DeleteValidation {}
 }
 

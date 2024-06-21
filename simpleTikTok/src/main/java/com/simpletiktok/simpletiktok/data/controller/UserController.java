@@ -3,6 +3,7 @@ package com.simpletiktok.simpletiktok.data.controller;
 import com.qiniu.util.Auth;
 import com.qiniu.util.StringMap;
 import com.simpletiktok.simpletiktok.data.entity.Love;
+import com.simpletiktok.simpletiktok.data.entity.QueryVideo;
 import com.simpletiktok.simpletiktok.data.entity.User;
 import com.simpletiktok.simpletiktok.data.entity.Video;
 import com.simpletiktok.simpletiktok.data.mapper.UserMapper;
@@ -45,13 +46,12 @@ public class UserController {
     private UserMapper userMapper;
 
     @PostMapping("/sign")
-    public ResponseResult<Map<String, String>> sign(@RequestBody @Validated(ValidationGroups.UserValidation.class) Map params)
+    public ResponseResult<Map<String, String>> sign(@RequestBody @Validated(ValidationGroups.UserValidation.class) User user)
     {
-        String author = (String) params.get("author");
-        String password = (String) params.get("password");
-        String confirmedPassword = (String) params.get("confirmedPassword");
+        String author = user.getAuthor();
+        String password = user.getPassword();
 
-        return ResponseResult.success(UserService.register(author, password, confirmedPassword));
+        return ResponseResult.success(UserService.register(author, password));
     }
 
     @PostMapping("/diggVideo")
@@ -60,6 +60,9 @@ public class UserController {
         love.setAuthor((String) params.get("author"));
         love.setAwemeId((String) params.get("aweme_id"));
         love.setIsloved(String.valueOf(params.get("isLoved")));
+        if(love.getAuthor().isEmpty() || love.getAwemeId().isEmpty() || love.getIsloved().isEmpty() || love.getAuthor() == null || love.getAwemeId() == null || love.getIsloved() == null){
+            return ResponseResult.failure(403,"缺少必要参数");
+        }
         boolean isSaved = LoveService.save(love);
         if (isSaved) {
             return ResponseResult.success(true);
@@ -69,12 +72,12 @@ public class UserController {
     }
 
     @DeleteMapping("/deleteVideo")
-    public ResponseResult<Boolean> deleteVideo(@RequestParam String author, @RequestParam String aweme_id) {
-        if (!hasPermission(author, aweme_id)) {
+    public ResponseResult<Boolean> deleteVideo(@ModelAttribute @Validated(ValidationGroups.DeleteValidation.class) QueryVideo queryVideo) {
+        if (!hasPermission(queryVideo.getAuthor(), queryVideo.getAwemeId())) {
             return ResponseResult.failure(403, "用户没有权限删除该视频");
         }
 
-        boolean isRemoved = VideoService.removeById(aweme_id);
+        boolean isRemoved = VideoService.removeById(queryVideo.getAwemeId());
         if (isRemoved) {
             return ResponseResult.success(true);
         } else {
@@ -93,6 +96,9 @@ public class UserController {
 
     @GetMapping("/getUploadToken")
     public Object getUploadToken(@RequestParam String author) {
+        if(author == null || author.isEmpty()) {
+            return ResponseResult.failure(403,"缺少必要参数");
+        }
         User user = userMapper.selectById(author);
         if(user == null) {
             return new RedirectView("/login"); // 这里假设登录入口的URL为 /login
@@ -116,6 +122,9 @@ public class UserController {
 
     @GetMapping("/panel")
     public ResponseResult<Map<String, Object>> panel(@RequestParam String author) {
+        if(author == null || author.isEmpty()) {
+            return ResponseResult.failure(403,"缺少必要参数");
+        }
         User user = userMapper.selectById(author);
         if(user == null) {
             return ResponseResult.failure(403,"未找到用户数据");

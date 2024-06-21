@@ -9,14 +9,14 @@ import java.time.format.DateTimeFormatter;
 
 @Data
 public class QueryVideo {
-    @Null
+    @NotNull(message = "视频ID不能为空",groups = {ValidationGroups.DeleteValidation.class})
     private String awemeId;
 
     @NotNull(message = "视频标题不为空", groups = {ValidationGroups.BasicValidation.class})
     private String title;
 
 
-    @NotNull(message = "author不为空", groups = {ValidationGroups.VideoValidation.class, ValidationGroups.RecommendedValidation.class,ValidationGroups.BasicValidation.class})
+    @NotNull(message = "author不为空", groups = {ValidationGroups.VideoValidation.class, ValidationGroups.RecommendedValidation.class,ValidationGroups.BasicValidation.class,ValidationGroups.DeleteValidation.class})
     private String author;
 
     @Null
