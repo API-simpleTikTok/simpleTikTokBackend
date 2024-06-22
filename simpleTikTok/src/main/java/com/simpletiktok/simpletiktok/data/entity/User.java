@@ -1,5 +1,6 @@
 package com.simpletiktok.simpletiktok.data.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.simpletiktok.simpletiktok.utils.ValidationGroups;
 import jakarta.validation.constraints.NotNull;
@@ -72,7 +73,7 @@ public class User implements Serializable {
 
     private Integer version;
     private String token;
-
+    @TableField("twoFactorCode")
     private String twoFactorCode;
 
     @Override

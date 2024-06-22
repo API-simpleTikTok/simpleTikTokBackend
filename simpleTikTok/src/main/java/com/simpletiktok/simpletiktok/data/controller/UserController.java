@@ -190,17 +190,7 @@ public class UserController {
         if(author == null || author.isEmpty()) {
             return ResponseResult.failure(403,"缺少必要参数");
         }
-        String[] res = generateQRCode(author);
-        UpdateWrapper<User> updateWrapper = new UpdateWrapper<>();
-        updateWrapper.eq("author", author).set("twoFactorCode", res[1]);
-        userMapper.update(null,updateWrapper);
-        Map<String, Object> map = new HashMap<>();
-        map.put("img", res[0]);
-        return ResponseResult.success(map);
-    }
 
-    @PostMapping("/bindingGoogleTwoFactorValidate")
-    public ResponseResult<Map<String, Object>> bindingGoogleTwoFactorValidate(@RequestParam("author")String author,@RequestParam("inputGoogleCode")String inputGoogleCode){
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("author", author);
         User user = userMapper.selectOne(queryWrapper);
@@ -209,11 +199,11 @@ public class UserController {
             return ResponseResult.failure(403,"该用户已经绑定了，不可重复绑定，若不慎删除令牌，请联系管理员重置");
         }
 
-        String rightCode =GoogleAuthenticationTool.getTOTPCode(user.getTwoFactorCode());
-        if(!rightCode.equals(inputGoogleCode)){
-            return ResponseResult.failure(403,"验证码失效或错误，请重试");
-        }
-        map.put("msg", "验证成功");
+        String[] res = generateQRCode(author);
+        UpdateWrapper<User> updateWrapper = new UpdateWrapper<>();
+        updateWrapper.eq("author", author).set("twoFactorCode", res[1]);
+        userMapper.update(null,updateWrapper);
+        map.put("img", res[0]);
         return ResponseResult.success(map);
     }
 
