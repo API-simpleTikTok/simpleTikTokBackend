@@ -194,6 +194,9 @@ public class UserController {
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("author", author);
         User user = userMapper.selectOne(queryWrapper);
+        if(user == null) {
+            return ResponseResult.failure(401,"用户不存在");
+        }
         Map<String,Object> map = new HashMap<>();
         if(user.getTwoFactorCode()!=null&& !user.getTwoFactorCode().isEmpty()){
             return ResponseResult.failure(403,"该用户已经绑定了，不可重复绑定，若不慎删除令牌，请联系管理员重置");
