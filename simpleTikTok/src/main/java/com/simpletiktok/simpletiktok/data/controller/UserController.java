@@ -53,12 +53,12 @@ public class UserController {
     private UserMapper userMapper;
 
     @PostMapping("/sign")
-    public ResponseResult<Map<String, String>> sign(@RequestBody @Validated(ValidationGroups.UserValidation.class) User user)
+    public ResponseResult<?> sign(@RequestBody @Validated(ValidationGroups.UserValidation.class) User user)
     {
         String author = user.getAuthor();
         String password = user.getPassword();
 
-        return ResponseResult.success(UserService.register(author, password));
+        return UserService.register(author, password);
     }
 
     @PostMapping("/diggVideo")

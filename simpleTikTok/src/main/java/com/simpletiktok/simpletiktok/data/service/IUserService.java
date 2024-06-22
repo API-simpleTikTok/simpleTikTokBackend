@@ -2,6 +2,7 @@ package com.simpletiktok.simpletiktok.data.service;
 
 import com.simpletiktok.simpletiktok.data.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.simpletiktok.simpletiktok.vo.ResponseResult;
 
 import java.util.Map;
 
@@ -14,5 +15,5 @@ import java.util.Map;
  * @since 2024-06-06
  */
 public interface IUserService extends IService<User> {
-    Map<String, String> register(String username, String password);
+    ResponseResult<Object> register(String username, String password);
 }

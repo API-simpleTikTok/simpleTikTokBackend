@@ -6,6 +6,7 @@ import com.simpletiktok.simpletiktok.data.entity.User;
 import com.simpletiktok.simpletiktok.data.mapper.UserMapper;
 import com.simpletiktok.simpletiktok.data.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.simpletiktok.simpletiktok.vo.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -35,43 +36,37 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     private SecurityConstant securityConstant;
 
     @Override
-    public Map<String, String> register(String username, String password)
+    public ResponseResult<Object> register(String username, String password)
     {
-        Map<String, String> map = new HashMap<>();
 
         if(username == null)
         {
-            map.put("error_message", "用户名不能为空");
-            return map;
+            return ResponseResult.failure(201, "用户名不能为空");
         }
         username = username.trim();
         username = username.trim();
         if (username.isEmpty())
         {
-            map.put("error_message", "用户名不能为空");
-            return map;
+            return ResponseResult.failure(201, "用户名不能为空");
         }
 
 
         if(username.length() > 100)
         {
-            map.put("error_message", "用户名过长");
-            return map;
+            return ResponseResult.failure(201, "用户名过长");
         }
 
         if (password == null ) {
-            map.put("error_message", "密码不能为空");
-            return map;
+            return ResponseResult.failure(201, "密码不能为空");
         }
 
         if (password.isEmpty() ) {
-            map.put("error_message", "密码不能为空");
+            return ResponseResult.failure(201, "用户名不能为空");
         }
 
         if(password.length() > 100)
         {
-            map.put("error_message", "密码过长");
-            return map;
+            return ResponseResult.failure(201, "密码过长");
         }
 
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
@@ -79,8 +74,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         List<User> users = userMapper.selectList(queryWrapper);
         if(!users.isEmpty())
         {
-            map.put("error_message", "用户已存在");
-            return map;
+            return ResponseResult.failure(201, "用户已存在");
         }
 
         String encodedPassword = passwordEncoder.encode(password);
@@ -102,9 +96,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         user.setVersion(0);
 
         userMapper.insert(user);
-
-        map.put("error_message", "success");
         securityConstant.update();
-        return map;
+        return ResponseResult.success("注册成功");
     }
 }
