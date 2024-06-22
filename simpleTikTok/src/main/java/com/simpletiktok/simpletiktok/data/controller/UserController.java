@@ -14,10 +14,12 @@ import com.simpletiktok.simpletiktok.data.service.ILoveService;
 import com.simpletiktok.simpletiktok.data.service.IUserService;
 import com.simpletiktok.simpletiktok.data.service.IVideoService;
 import com.simpletiktok.simpletiktok.utils.GoogleAuthenticationTool;
+import com.simpletiktok.simpletiktok.utils.JwtUtils;
 import com.simpletiktok.simpletiktok.utils.ValidationGroups;
 import com.simpletiktok.simpletiktok.vo.ResponseResult;
 import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
@@ -94,8 +96,13 @@ public class UserController {
     }
 
     @DeleteMapping("/deleteVideo")
-    public ResponseResult<Boolean> deleteVideo(@ModelAttribute @Validated(ValidationGroups.DeleteValidation.class) QueryVideo queryVideo) {
-        if (!hasPermission(queryVideo.getAuthor(), queryVideo.getAwemeId())) {
+    public ResponseResult<Boolean> deleteVideo(
+            @RequestHeader("Authorization") String token,
+            @ModelAttribute @Validated(ValidationGroups.DeleteValidation.class) QueryVideo queryVideo) {
+
+        String subject = JwtUtils.getSubject(token);
+
+        if (!hasPermission(subject, queryVideo.getAuthor(), queryVideo.getAwemeId())) {
             return ResponseResult.failure(403, "用户没有权限删除该视频");
         }
 
@@ -107,7 +114,13 @@ public class UserController {
         }
     }
 
-    public boolean hasPermission(String author, String aweme_id) {
+    public boolean hasPermission(String subject, String author, String aweme_id) {
+
+        if(!subject.equals(author))
+        {
+            return false;
+        }
+
         Video video = VideoService.getById(aweme_id);
         if (video == null) {
             return false;
