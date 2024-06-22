@@ -29,7 +29,8 @@ public class MyAuthenticationFilter extends OncePerRequestFilter {
             "/session",
             "/user/sign",
             "/video/recommended",
-            "/public"
+            "/public",
+            "/user/bindingGoogleTwoFactorValidate"
     };
 
     @Override
