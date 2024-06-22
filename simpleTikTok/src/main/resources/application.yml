@@ -1,5 +1,9 @@
 server:
   port: 3030
+  ssl:
+    key-store-password: 964fcclz
+    key-store-type: JKS
+    key-store: classpath:www.hyh31.top.jks
 
 spring:
   datasource:
