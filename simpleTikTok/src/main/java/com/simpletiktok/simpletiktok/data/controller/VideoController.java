@@ -15,8 +15,6 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -140,7 +138,26 @@ public class VideoController {
     {
         LambdaQueryWrapper<Video> countQueryWrapper = new LambdaQueryWrapper<>();
         int totalVideos = (int) videoService.count(countQueryWrapper);
-        List<Video> videoList = videoService.getRecommendedVideo(queryVideo.getStart(), queryVideo.getPageSize(), queryVideo.getAuthor());
+        List<Video> recommendations = videoService.getRecommendedVideo(queryVideo.getStart(), queryVideo.getPageSize(), queryVideo.getAuthor());
+
+        List<Video> videoList = new ArrayList<>();
+//        使用布隆过滤器来避免重复推荐
+        while(true){
+            for (Video video : recommendations){
+                if (!bloomFilterService.mightContain(video.getAwemeId()+queryVideo.getAuthor())) {
+                    videoList.add(video);
+                    bloomFilterService.add(video.getAwemeId()+queryVideo.getAuthor());
+                }
+            }
+            if(videoList.size() == queryVideo.getPageSize()){
+                break;
+            }else if(queryVideo.getStart() < totalVideos){
+                queryVideo.setStart(queryVideo.getStart()+queryVideo.getPageSize());
+                recommendations = videoService.getRecommendedVideo(queryVideo.getStart(), queryVideo.getPageSize()-videoList.size(), queryVideo.getAuthor());
+            }else{
+                break;
+            }
+        }
 
         Map<String, Object> videoPage = new HashMap<>();
         videoPage.put("total", totalVideos);
