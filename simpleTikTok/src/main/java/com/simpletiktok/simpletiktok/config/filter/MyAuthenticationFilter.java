@@ -33,10 +33,29 @@ public class MyAuthenticationFilter extends OncePerRequestFilter {
             "/user/bindingGoogleTwoFactorValidate"
     };
 
+    // 忽略权限检查的url地址
+    private final String[] excludeUrls = new String[]{
+            "null"
+    };
+
     @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
+
+        //注入xss过滤器实例
+        XssHttpServletRequestWraper reqW = new XssHttpServletRequestWraper(request);
+        //获取请求你ip后的全部路径
+        String uri = request.getRequestURI();
+        //过滤掉不需要的Xss校验的地址
+        for (String str : excludeUrls) {
+            if (uri.contains(str)) {
+                filterChain.doFilter(request, response);
+                return;
+            }
+        }
+        //过滤
+        filterChain.doFilter(reqW, response);
 
         String path = request.getRequestURI();
 

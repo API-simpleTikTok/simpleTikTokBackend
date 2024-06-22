@@ -4,9 +4,6 @@ import com.simpletiktok.simpletiktok.utils.ValidationGroups;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 @Data
 public class QueryVideo {
     @NotNull(message = "视频ID不能为空",groups = {ValidationGroups.DeleteValidation.class})
