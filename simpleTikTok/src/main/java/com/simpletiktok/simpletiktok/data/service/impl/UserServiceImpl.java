@@ -41,36 +41,36 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
         if(username == null)
         {
-            map.put("error_message", "用户名不能为空");
+            map.put("msg", "用户名不能为空");
             return map;
         }
         username = username.trim();
         username = username.trim();
         if (username.isEmpty())
         {
-            map.put("error_message", "用户名不能为空");
+            map.put("msg", "用户名不能为空");
             return map;
         }
 
 
         if(username.length() > 100)
         {
-            map.put("error_message", "用户名过长");
+            map.put("msg", "用户名过长");
             return map;
         }
 
         if (password == null ) {
-            map.put("error_message", "密码不能为空");
+            map.put("msg", "密码不能为空");
             return map;
         }
 
         if (password.isEmpty() ) {
-            map.put("error_message", "密码不能为空");
+            map.put("msg", "密码不能为空");
         }
 
         if(password.length() > 100)
         {
-            map.put("error_message", "密码过长");
+            map.put("msg", "密码过长");
             return map;
         }
 
@@ -79,7 +79,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         List<User> users = userMapper.selectList(queryWrapper);
         if(!users.isEmpty())
         {
-            map.put("error_message", "用户已存在");
+            map.put("msg", "用户已存在");
             return map;
         }
 
@@ -103,7 +103,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
         userMapper.insert(user);
 
-        map.put("error_message", "success");
+        map.put("msg", "success");
         securityConstant.update();
         return map;
     }
