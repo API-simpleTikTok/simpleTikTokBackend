@@ -4,6 +4,8 @@ server:
     key-store-password: 964fcclz
     key-store-type: JKS
     key-store: classpath:www.hyh31.top.jks
+    enabled: true
+
 
 spring:
   datasource:
