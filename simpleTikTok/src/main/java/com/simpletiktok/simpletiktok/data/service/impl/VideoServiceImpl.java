@@ -52,10 +52,10 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements
 
         LambdaQueryWrapper<Video> queryWrapper = new LambdaQueryWrapper<>();
 
-        // 排除用户喜欢过的视频
-        if (!likedVideoIds.isEmpty()) {
-            queryWrapper.notIn(Video::getAwemeId, likedVideoIds);
-        }
+//        // 排除用户喜欢过的视频
+//        if (!likedVideoIds.isEmpty()) {
+//            queryWrapper.notIn(Video::getAwemeId, likedVideoIds);
+//        }
 
 
         queryWrapper.orderByDesc(Video::getDiggCount);

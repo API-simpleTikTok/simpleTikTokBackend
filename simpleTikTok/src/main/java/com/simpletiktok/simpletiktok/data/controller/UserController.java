@@ -37,7 +37,7 @@ import java.util.Map;
 @RequestMapping("/user")
 public class UserController {
     @Resource
-    private ILoveService LoveService;
+    private ILoveService loveService;
     @Resource
     private IVideoService VideoService;
     @Resource
@@ -55,7 +55,7 @@ public class UserController {
     }
 
     @PostMapping("/diggVideo")
-    public ResponseResult<Boolean> diggVideo(@RequestBody Map params) {
+    public ResponseResult<Object> diggVideo(@RequestBody Map params) {
         Love love = new Love();
         love.setAuthor((String) params.get("author"));
         love.setAwemeId((String) params.get("aweme_id"));
@@ -63,11 +63,28 @@ public class UserController {
         if(love.getAuthor().isEmpty() || love.getAwemeId().isEmpty() || love.getIsloved().isEmpty() || love.getAuthor() == null || love.getAwemeId() == null || love.getIsloved() == null){
             return ResponseResult.failure(403,"缺少必要参数");
         }
-        boolean isSaved = LoveService.save(love);
-        if (isSaved) {
-            return ResponseResult.success(true);
-        } else {
-            return ResponseResult.failure(400, "点赞失败");
+        List<Love> loveList  = loveService.getLoveByAuthor(love.getAuthor(),love.getAwemeId());
+        Map<String, Object> res = new HashMap<>();
+        if(!loveList.isEmpty()){
+            boolean isUpdate = loveService.updateLoveStatus(love.getAuthor(),love.getIsloved(),love.getAwemeId());
+            if(!isUpdate){
+                res.put("code",400);
+                res.put("msg","更新失败");
+            }else{
+                res.put("code",200);
+                res.put("msg","更新成功");
+            }
+            return ResponseResult.success(res);
+        }else {
+            boolean isSaved = loveService.save(love);
+            if (isSaved) {
+                res.put("code",200);
+                res.put("msg","更新成功");
+            } else {
+                res.put("code",400);
+                res.put("msg","更新失败");
+            }
+            return ResponseResult.success(res);
         }
     }
 
