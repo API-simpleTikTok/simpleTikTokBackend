@@ -1,5 +1,6 @@
 package com.simpletiktok.simpletiktok.data.controller;
 
+import com.simpletiktok.simpletiktok.annotation.Time;
 import com.simpletiktok.simpletiktok.data.entity.User;
 import com.simpletiktok.simpletiktok.data.service.ISessionService;
 import com.simpletiktok.simpletiktok.utils.ValidationGroups;
@@ -30,6 +31,7 @@ public class SessionController
     @Resource
     ISessionService sessionService;
 
+    @Time
     @PostMapping("")
     public ResponseResult<Map<String, String>> login(@RequestBody @Validated(ValidationGroups.UserValidation.class) User user) {
 
