@@ -1,5 +1,8 @@
 package com.simpletiktok.simpletiktok.data.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.google.zxing.WriterException;
 import com.qiniu.util.Auth;
 import com.qiniu.util.StringMap;
 import com.simpletiktok.simpletiktok.data.entity.Love;
@@ -10,6 +13,7 @@ import com.simpletiktok.simpletiktok.data.mapper.UserMapper;
 import com.simpletiktok.simpletiktok.data.service.ILoveService;
 import com.simpletiktok.simpletiktok.data.service.IUserService;
 import com.simpletiktok.simpletiktok.data.service.IVideoService;
+import com.simpletiktok.simpletiktok.utils.GoogleAuthenticationTool;
 import com.simpletiktok.simpletiktok.utils.ValidationGroups;
 import com.simpletiktok.simpletiktok.vo.ResponseResult;
 import jakarta.annotation.Resource;
@@ -19,6 +23,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -178,6 +183,52 @@ public class UserController {
         author_list.put("gender", user.getGender());
         author_list.put("unique_id", user.getAuthor());
         return ResponseResult.success(author_list);
+    }
+
+    @GetMapping("/bindingGoogleTwoFactorValidate")
+    public ResponseResult<Map<String, Object>> bindingGoogleTwoFactorValidate(@RequestParam String author) {
+        if(author == null || author.isEmpty()) {
+            return ResponseResult.failure(403,"缺少必要参数");
+        }
+        String[] res = generateQRCode(author);
+        UpdateWrapper<User> updateWrapper = new UpdateWrapper<>();
+        updateWrapper.eq("author", author).set("twoFactorCode", res[1]);
+        userMapper.update(null,updateWrapper);
+        Map<String, Object> map = new HashMap<>();
+        map.put("img", res[0]);
+        return ResponseResult.success(map);
+    }
+
+    @PostMapping("/bindingGoogleTwoFactorValidate")
+    public ResponseResult<Map<String, Object>> bindingGoogleTwoFactorValidate(@RequestParam("author")String author,@RequestParam("inputGoogleCode")String inputGoogleCode){
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("author", author);
+        User user = userMapper.selectOne(queryWrapper);
+        Map<String,Object> map = new HashMap<>();
+        if(user.getTwoFactorCode()!=null&& !user.getTwoFactorCode().isEmpty()){
+            return ResponseResult.failure(403,"该用户已经绑定了，不可重复绑定，若不慎删除令牌，请联系管理员重置");
+        }
+
+        String rightCode =GoogleAuthenticationTool.getTOTPCode(user.getTwoFactorCode());
+        if(!rightCode.equals(inputGoogleCode)){
+            return ResponseResult.failure(403,"验证码失效或错误，请重试");
+        }
+        map.put("msg", "验证成功");
+        return ResponseResult.success(map);
+    }
+
+    private String[] generateQRCode(String author) {
+        String randomSecretKey = GoogleAuthenticationTool.generateSecretKey();
+        //此步设置的参数就是App扫码后展示出来的参数
+        String qrCodeString = GoogleAuthenticationTool.spawnScanQRString(author,randomSecretKey,"Simpletiktok");
+        String qrCodeImageBase64 = null;
+        try {
+            qrCodeImageBase64 = GoogleAuthenticationTool.createQRCode(qrCodeString,null,512,512);
+        } catch (WriterException | IOException e) {
+            System.out.println(e.toString());
+        }
+
+        return new String[]{qrCodeImageBase64, randomSecretKey};
     }
 
 }

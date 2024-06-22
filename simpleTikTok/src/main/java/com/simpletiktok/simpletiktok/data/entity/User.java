@@ -73,6 +73,8 @@ public class User implements Serializable {
     private Integer version;
     private String token;
 
+    private String twoFactorCode;
+
     @Override
     public String toString() {
         return "User{" +
