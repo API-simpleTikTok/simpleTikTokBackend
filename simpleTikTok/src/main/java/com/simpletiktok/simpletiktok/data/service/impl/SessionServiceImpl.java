@@ -48,13 +48,18 @@ public class SessionServiceImpl implements ISessionService
             // 处理认证失败的情况
             System.out.println("Authentication failed: " + e.getMessage());
         }
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("author", author);
-        User user = userMapper.selectOne(queryWrapper);
-        if(user == null){
-            return null;
+        User user;
+        try {
+            QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+            queryWrapper.eq("author", author);
+            user = userMapper.selectOne(queryWrapper);
+        } catch (Exception e) {
+            e.printStackTrace(); // 或使用日志记录工具记录
+            System.out.println(e.getMessage());
+            throw e; // 可以重新抛出异常或进行其他错误处理
         }
-        if(!user.getPassword().equals(password)){
+
+        if(user == null){
             return null;
         }
         String token = JwtUtils.generateToken(author, user.getVersion());
