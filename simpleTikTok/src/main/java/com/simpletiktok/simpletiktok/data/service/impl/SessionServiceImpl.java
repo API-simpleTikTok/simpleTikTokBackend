@@ -47,6 +47,7 @@ public class SessionServiceImpl implements ISessionService
         } catch (AuthenticationException e) {
             // 处理认证失败的情况
             System.out.println("Authentication failed: " + e.getMessage());
+            return null;
         }
         User user;
         try {
